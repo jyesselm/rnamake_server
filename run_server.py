@@ -10,6 +10,8 @@ import subprocess
 import time
 
 import rnamake_server.html_page
+from rnamake_server import html_page_new
+from rnamake_server import navbar
 
 MEDIA_DIR = os.path.join(os.path.abspath("."))
 DATA_BASE_DIR = MEDIA_DIR + "/data/"
@@ -432,6 +434,10 @@ class rest:
         return open(os.path.join(MEDIA_DIR, u"res/html/Design.html"))
 
     @cherrypy.expose
+    def test(self):
+        return html_page_new.BasicPage().to_str()
+
+    @cherrypy.expose
     def example_uucg(self):
         job_dir = os.urandom(16).encode('hex')
         new_dir = "data/"+job_dir
@@ -519,6 +525,11 @@ class Download:
 
 
 if __name__ == "__main__":
+    #n = navbar.NavBarHeader("RNA Redesign", link="/res/html/Design.html")
+    #print n.body
+
+    #exit()
+
     server_state = "development"
     if len(sys.argv) > 1:
         server_state = sys.argv[1]

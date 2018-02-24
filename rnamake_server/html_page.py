@@ -39,6 +39,8 @@ class HTMLElement(object):
         self.head, self.javascript, self.body = "", "", ""
 
 
+
+
 class PageRefresher(HTMLElement):
     def __init__(self, refresh_time=120):
         super(PageRefresher, self).__init__()
@@ -46,6 +48,7 @@ class PageRefresher(HTMLElement):
         self.head += """
 
         """
+
 
 class HTMLFileTemplate(HTMLElement):
     def __init__(self, fname):
@@ -96,7 +99,6 @@ class HTMLFileTemplate(HTMLElement):
                              of this template")
 
 
-
 class ProgressBar(HTMLElement):
     def __init__(self, progress=0):
         super(ProgressBar, self).__init__()
@@ -106,6 +108,7 @@ class ProgressBar(HTMLElement):
             role="progressbar" aria-valuenow="%s" aria-valuemin="0"
             aria-valuemax="100" style="width: %s%s"> </div>
        </div> """ % (str(progress), str(progress), "%")
+
 
 class CanvasJSChart(HTMLElement):
     def __init__(self, ctype="column",data={}, name="Chart1", title={},
