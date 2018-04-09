@@ -3,96 +3,86 @@ body {
   padding-bottom: 30px;
   padding-left: 15px;
   padding-right: 15px;
+
+  font-family: Roboto,sans-serif;  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+
 }
 
-img {
-   max-width: 100%;
-   height: auto;
-   width: auto\9; /* ie8 */
-   
-   display:block;
+.card {
+   position: relative;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+   -ms-flex-direction: column;
+   flex-direction: column;
+   min-width: 0;
+   word-wrap: break-word;
+   background-color: #fff;
+   background-clip: border-box;
+   border: 1px solid rgba(0,0,0,.125);
+   border-radius: .25rem;
 }
 
-th, td {
-    padding-right: 25px;
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  background-color: transparent;
-}
-.jumbotron {
-  padding: 14px 24px;
-  font-size: 21px;
-}
-
-
-.bgimg {
-  background-image: url("/images/bg_rna.png");
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-size: 30%;
-}
-
-.btn-file {
+.left {
+  display: block;
   position: relative;
-  overflow: hidden;
+  width: 37%;
 }
-.btn-file input[type=file] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  min-width: 100%;
-  min-height: 100%;
-  font-size: 100px;
-  text-align: right;
-  filter: alpha(opacity=0);
-  opacity: 0;
-  background: red;
-  cursor: inherit;
+
+.right {
   display: block;
-}
-input[readonly] {
-  background-color: white !important;
-  cursor: text !important;
+  position: relative;
+  width: 63%;
 }
 
-
-html { 
-  overflow-y: scroll; 
+.large {
+    font-weight: 300;
+    font-size: 2em;
+    color: #5b5b5b;
+    line-height: 1.5;
 }
 
-.starter-template {
-  padding: 40px 15px;
+#nav  {
+
+  font-weight: 400;
+  font-size: 2rem;
 }
 
-.theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
-}
-.theme-showcase > p > .btn {
-  margin: 5px 0;
+#credits {
+  margin: 0 0 0 0px;
+  font-size: 1rem;
 }
 
 
-.tutorial{
-  opacity:0.5;
+h2 {
+  font-weight: 300;
 }
 
-
-.popover-title{
-    background-color: #000000;
-    border-color: #fbad24;
-    color: #ffffff;
-    opacity:0.9;
+h3 {
+  font-family: Roboto,sans-serif;
+  font-size: 3em;
+  line-height: 1.4;
 }
 
-.popover-content {
-    background-color: #000000;
-    border-color: #fbad24;
-    color: #7cafd3;
-    opacity:0.8;
+label {
+  display: inline-block;
+  font-family: Roboto,sans-serif;  font-size: 1rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
+.form-control {
+  width: 90%;
+}

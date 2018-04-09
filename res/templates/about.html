@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include '/res/templates/required_files.html' %}
+
+</head>
+
+<body>
+
+  {% import '/res/templates/nav.html' as nav %} {{nav.navbar('RNAMake Server', [['Home', '/index'], ['Tutorial', '/index'], ['How does it work?', '/about']], 'How does it work?')}}
+
+  <br />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3>How does RNAMake generate new RNA segments? </h3>
+        <p class="large">RNAMake leverages an extensive motif library and pathfinding
+           algorithms to automate the assembly of RNA 3D motifs in design. Specifically, RNAMake is capable of
+           generating RNA segments in 3D composed of continuous chains of RNA motifs that that twist and translate
+           between any two desired helical endpoints</p>
+      </div>
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-7">
+        <img src="/res/images/assembly.png" width="100%"/>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-4">
+        <h3> What problems can RNAMake solve on this webserver? </h3>
+        <p class="large">RNAMake can solve two distinct types of 3D design problems this server </p>
+      </div>
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-7">
+      </div>
+    </div>
+
+
+  </div>
+
+  <hr>
+  {% include '/res/templates/supported_by.html' %}
+
+</body>
+
+</html>

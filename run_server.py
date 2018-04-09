@@ -1,5 +1,7 @@
 import cherrypy
 from cherrypy.lib.static import serve_file
+from jinja2 import Environment, FileSystemLoader
+
 
 import os
 import random
@@ -15,6 +17,9 @@ from rnamake_server import navbar
 
 MEDIA_DIR = os.path.join(os.path.abspath("."))
 DATA_BASE_DIR = MEDIA_DIR + "/data/"
+
+j2_env = Environment(loader=FileSystemLoader(MEDIA_DIR),
+                     trim_blocks=True)
 
 class BasePage(rnamake_server.html_page.HTMLPage):
     def __init__(self):
@@ -303,119 +308,6 @@ def format_pdb_num(num):
     return s + ".pdb"
 
 
-def get_js_plot_score(score_path, sequence_path):
-    f = open(score_path)
-    score_lines = f.readlines()
-    score_lines.pop(0)
-    f.close()
-
-    scores = []
-    for l in score_lines:
-        spl = l.split()
-        scores.append(float(spl[1]))
-
-    f = open(sequence_path)
-    sequence_lines = f.readlines()
-    f.close()
-
-    native = "ccuucggg"
-    sequences = []
-
-    for l in sequence_lines:
-        spl = l.split()
-        sequences.append(spl[1])
-
-    s =  """ var chart2 = new CanvasJS.Chart("ScorePlot",
-    {
-      title:{
-        text: "Native Sequence Recovery"
-      },
-      axisY: {
-        title: "Native Recovery",
-        maximum: -20
-      },
-
-      axisX: {
-        title: "Residues"
-      },
-      data: [
-      {
-        type: "scatter",
-        dataPoints: [
-    """
-
-    for i in range(len(scores)):
-        rmsd = 0
-        for j in range(len(native)):
-            if native[j] != sequences[i][j]:
-                rmsd += 1
-
-        s += "{ x: " + str(rmsd) + ", y: "+ str(scores[i]) + "},\n"
-
-        #s += "{ x: " + str(rmsd) + ", y: "+ str(scores[i])+ ", label: " +\
-        #    "\""+format_pdb_num(i)+"\"" + " },\n
-
-
-    s += """ ]
-      }
-      ]
-    });
-
-    chart2.render();
-    """
-
-    return s
-
-
-def get_nav_bar():
-    return """<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/res/html/Design.html">&nbsp;&nbsp;RNA Redesign&nbsp;&nbsp;</a>
-
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/res/html/Design.html">Home</a></li>
-            <li><a href="/res/html/Tutorial.html">Tutorial</a></li>
-            <li><a href="/res/html/About.html">About</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-    """
-
-
-def get_html_head():
-    return """<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="shortcut icon" href="/images/EteRNA_shortcut.png">
-        <title>RNA Redesign</title>
-
-        <!-- Bootstrap core CSS -->
-        <link href="/res/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Bootstrap theme -->
-        <link href="/res/css/bootstrap-theme.min.css" rel="stylesheet">
-        <!-- Custom styles for this template -->
-        <link href="/res/css/theme.css" rel="stylesheet">
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script src="/res/js/bootstrap.min.js"></script>
-        <script src="/res/js/canvasjs.min.js"></script>
-    """
-
-
 def get_cluster_table(job_id):
     # TODO consider putting them on multiple rows
     s = "<div><table><tr>"
@@ -431,11 +323,17 @@ class rest:
 
     @cherrypy.expose
     def index(self):
-        return open(os.path.join(MEDIA_DIR, u"res/html/Design.html"))
+        index =  j2_env.get_template("res/templates/index.html")
+        return index.render()
+
+    @cherrypy.expose
+    def about(self):
+        about = j2_env.get_template("res/templates/about.html")
+        return about.render()
 
     @cherrypy.expose
     def test(self):
-        return html_page_new.BasicPage().to_str()
+        return html_page_new.ResultsPage("c32af6417fb183e71c662232091ce548").to_str()
 
     @cherrypy.expose
     def example_uucg(self):
@@ -452,7 +350,8 @@ class rest:
         raise cherrypy.HTTPRedirect('/result/' + job_dir)
 
     @cherrypy.expose
-    def design_primers(self, pdb_file, nstructs, email=""):
+    def design_primers(self, pdb_file, start_bp, end_bp, nstructs, email=""):
+
         job_dir = os.urandom(16).encode('hex')
         new_dir = "data/"+job_dir
         os.mkdir(new_dir)

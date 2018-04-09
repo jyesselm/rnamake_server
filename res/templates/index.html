@@ -1,0 +1,33 @@
+<html>
+<head>
+{% include '/res/templates/required_files.html' %}
+
+<!-- css and js for design_form --->
+<link href="/res/css/design_form.css" rel="stylesheet">
+<script src="/res/js/design_form.js"></script>
+
+
+</head>
+<body>
+
+{% import '/res/templates/nav.html' as nav %}
+{{nav.navbar('RNAMake Server',
+             [['Home', '/index'], ['Tutorial', '/index'], ['How does it work?', '/about']],
+             'Home')}}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      {% include '/res/templates/design_form.html' %}
+    </div>
+    <div class="col-lg-6">
+      <img src="/res/images/ggaa_tetraloop.png" width=100% />
+    </div>
+  </div>
+</div>
+
+<hr>
+{% include '/res/templates/supported_by.html' %}
+
+</body>
+</html>
