@@ -164,8 +164,8 @@ class ResultsPage(HTMLPage):
             divs.append(
                 Div("class=box",
                     Img("src=/" + imgs[i], "height=25%"),
-                       Span("", "class=caption simple-caption",
-                            H6("Design "+str(i)+"<br> Score: XXX\n"))))
+                    Span("", "class=caption simple-caption",
+                           H6("Design "+str(i)+"<br> Score: XXX\n"))))
 
         return Div("id=mainwrapper", *divs)
 

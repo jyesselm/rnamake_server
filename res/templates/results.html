@@ -1,21 +1,107 @@
 <html>
-<head>
-{% include '/res/templates/required_files.html' %}
 
-<!-- css and js for design_form --->
-<link href="/res/css/design_form.css" rel="stylesheet">
-<script src="/res/js/design_form.js"></script>
+<head>
+  {% include '/res/templates/required_files.html' %}
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="/res/js/jquery.tablesorter.min.js"></script>
+
+  <!--- css and js for boxes -->
+  <link href="/res/css/box_theme.css" rel="stylesheet">
 
 
 </head>
+
 <body>
 
-{% import '/res/templates/nav.html' as nav %}
-{{nav.navbar('RNAMake Server',
-             [['Home', '/index'], ['Tutorial', '/index'], ['How does it work?', '/about']])}}
+  {% import '/res/templates/nav.html' as nav %} {{nav.navbar('RNAMake Server', [['Home', '/index'], ['Tutorial', '/index'], ['How does it work?', '/about']])}}
 
+  <div class="container">
+    <h3>job:  {{job_id}}</h3>
+    <!-- best scoring designs-->
+    <div class="row">
+      <div id="mainwrapper">
+        {% for d_img in d_imgs %}
+        <div class="box">
+          <img src="{{d_img.path}}" width="170" />
+          <span class="caption simple-caption">
+          <h6>{{d_img.name}}</h6>
+        </span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <div id="score_plot"></div>
+      </div>
+      <div class="col-lg-4">
+        <div id="length_plot"></div>
+      </div>
+      <div class="col-lg-4">
+        <div id="eterna_plot"></div>
+      </div>
+    </div>
+    <div class="row">
+      {{results_table}}
+      <table id="myTable" class="tablesorter table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Email</th>
+            <th>Due</th>
+            <th>Web Site</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Smith</td>
+            <td>John</td>
+            <td>jsmith@gmail.com</td>
+            <td>$50.00</td>
+            <td>http://www.jsmith.com</td>
+          </tr>
+          <tr>
+            <td>Bach</td>
+            <td>Frank</td>
+            <td>fbach@yahoo.com</td>
+            <td>$50.00</td>
+            <td>http://www.frank.com</td>
+          </tr>
+          <tr>
+            <td>Doe</td>
+            <td>Jason</td>
+            <td>jdoe@hotmail.com</td>
+            <td>$100.00</td>
+            <td>http://www.jdoe.com</td>
+          </tr>
+          <tr>
+            <td>Conway</td>
+            <td>Tim</td>
+            <td>tconway@earthlink.net</td>
+            <td>$50.00</td>
+            <td>http://www.timconway.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
+  </div>
+
+  <script>
+    {{js_score_plot}}
+
+    {{js_length_plot}}
+
+    {{js_eterna_score}}
+
+    $(document).ready(function() {
+      $("#myTable").tablesorter();
+    });
+  </script>
 
 
 </body>
+
 </html>

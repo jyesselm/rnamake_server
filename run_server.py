@@ -1,4 +1,5 @@
 import cherrypy
+import pandas as pd
 from cherrypy.lib.static import serve_file
 from jinja2 import Environment, FileSystemLoader
 
@@ -9,11 +10,17 @@ import string
 import sys
 import shutil
 import subprocess
+import glob
 import time
+
+from collections import namedtuple
 
 import rnamake_server.html_page
 from rnamake_server import html_page_new
 from rnamake_server import navbar
+
+DesignImage = namedtuple('DesignImage', ['path', 'name'])
+
 
 MEDIA_DIR = os.path.join(os.path.abspath("."))
 DATA_BASE_DIR = MEDIA_DIR + "/data/"
@@ -318,6 +325,140 @@ def get_cluster_table(job_id):
     s += "</tr></table></div>"
     return s
 
+def get_js_score_plot(df):
+    y = "[ " + ",".join(str(x) for x in df.opt_score) + "]"
+    x = "[ " + ",".join(str(i+1) for i, x in enumerate(df.opt_score)) + "]"
+
+    s = """
+    var trace = { 
+        x : %s, 
+        y: %s,
+        type: "line",
+        marker : {
+            opacity: 0.5, 
+            line: {
+                color: 'rbg(8,48,107)',
+                width: 1.5
+            }
+            
+        }
+        
+    };
+    var layout = {
+        autosize: false,
+        width: 400,
+        height: 400,  
+        title: "Scores (Lower is better)",
+        xaxis: {
+            title: 'Design Number',
+            showgrid: false,
+            showline: true
+
+        },
+        yaxis: {
+            title: 'Score',
+            showgrid: false,
+            showline: true
+
+        },
+        margin: {
+            l : 60
+        }
+    };
+    
+    Plotly.newPlot('score_plot', [trace], layout);
+    """ % (x, y )
+    return s
+
+def get_js_length_plot(df):
+    y = "[ " + ",".join(str(len(x)) for x in df.opt_sequence) + "]"
+    x = "[ " + ",".join(str(i + 1) for i, x in enumerate(df.opt_sequence)) + "]"
+
+    s = """
+    var trace = { 
+        x : %s, 
+        y: %s,
+        type: "line",
+        marker : {
+            opacity: 0.5, 
+            line: {
+                color: 'rbg(8,48,107)',
+                width: 1.5
+            }
+
+        }
+
+    };
+    var layout = {
+        autosize: false,
+        width: 400,
+        height: 400,  
+        title: "Length",
+        xaxis: {
+            title: 'Design Number',
+            showgrid: false,
+            showline: true
+
+        },
+        yaxis: {
+            title: '# of Residues',
+            showgrid: false,
+            showline: true
+
+        },
+          margin: {
+            l : 60
+        }
+    };
+
+    Plotly.newPlot('length_plot', [trace], layout);
+    """ % (x, y)
+    return s
+
+def get_js_eterna_score(df):
+    y = "[ " + ",".join(str(x) for x in df.eterna_score) + "]"
+    x = "[ " + ",".join(str(i + 1) for i, x in enumerate(df.eterna_score)) + "]"
+
+    s = """
+    var trace = { 
+        x : %s, 
+        y: %s,
+        type: "line",
+        marker : {
+            opacity: 0.5, 
+            line: {
+                color: 'rbg(8,48,107)',
+                width: 1.5
+            }
+
+        }
+
+    };
+    var layout = {
+        autosize: false,
+        width: 400,
+        height: 400,  
+        title: "Eterna Score (Larger is better)",
+        xaxis: {
+            title: 'Design Number',
+            showgrid: false,
+            showline: true
+
+        },
+        yaxis: {
+            title: 'Eterna Score',
+            showgrid: false,
+            showline: true
+
+        },
+          margin: {
+            l : 60
+        }
+    };
+
+    Plotly.newPlot('eterna_plot', [trace], layout);
+    """ % (x, y)
+    return s
 
 class rest:
 
@@ -372,7 +513,25 @@ class rest:
         raise cherrypy.HTTPRedirect('/result/' + job_dir)
 
     @cherrypy.expose
-    def result(self, dir_id):
+    def result(self, job_id):
+        df = pd.read_csv("data/"+ job_id + "/default.scores")
+
+        imgs = glob.glob("data/" + job_id + "/design_*")
+        d_imgs = []
+        for i, img in enumerate(imgs):
+            d_imgs.append(DesignImage("/"+img, "Design " + str(i)))
+
+        results = j2_env.get_template("res/templates/results.html")
+        return results.render(
+            job_id = job_id,
+            d_imgs = d_imgs,
+            js_score_plot= get_js_score_plot(df),
+            js_length_plot = get_js_length_plot(df),
+            js_eterna_score = get_js_eterna_score(df)
+        )
+
+    @cherrypy.expose
+    def old_result(self, dir_id):
         # job not done show waiting page
         path = DATA_BASE_DIR + dir_id + "/weblogo.png"
         error = DATA_BASE_DIR + dir_id + "/ERROR"
