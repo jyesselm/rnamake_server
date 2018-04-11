@@ -20,6 +20,9 @@ from rnamake_server import html_page_new
 from rnamake_server import navbar
 
 DesignImage = namedtuple('DesignImage', ['path', 'name'])
+DesignInfo = namedtuple('DesignInfo', ['img_path', 'design_num', 'score',
+                                       'eterna_score', 'sequence', 'structure', 'motifs_used'])
+MotifInfo = namedtuple('MotifInfo', ['name', 'num'])
 
 
 MEDIA_DIR = os.path.join(os.path.abspath("."))
@@ -460,6 +463,30 @@ def get_js_eterna_score(df):
     """ % (x, y)
     return s
 
+def get_design_infos(df, job_id):
+    design_infos = []
+    count = 1
+    for i, row in df.iterrows():
+        structure = "".join(["." for x in row.opt_sequence])
+        motif_uses = []
+        spl = row.motifs_uses.split(";")
+        for e in spl[:-1]:
+            if e[0] == "H":
+                continue
+            motif_uses.append(MotifInfo(e, count))
+            count += 1
+
+        design_infos.append(
+            DesignInfo("/data/"+job_id+"/design_"+str(row.design_num)+".png",
+                       row.design_num,
+                       row.opt_score,
+                       row.eterna_score,
+                       row.opt_sequence,
+                       structure,
+                       motif_uses))
+    return design_infos
+
+
 class rest:
 
     @cherrypy.expose
@@ -472,23 +499,11 @@ class rest:
         about = j2_env.get_template("res/templates/about.html")
         return about.render()
 
-    @cherrypy.expose
-    def test(self):
-        return html_page_new.ResultsPage("c32af6417fb183e71c662232091ce548").to_str()
 
     @cherrypy.expose
-    def example_uucg(self):
-        job_dir = os.urandom(16).encode('hex')
-        new_dir = "data/"+job_dir
-        os.mkdir(new_dir)
+    def design_scaffold(self, pdb_file, start_bp, end_bp, nstructs, email=""):
+        pass
 
-        shutil.copy(MEDIA_DIR + "/rna_design/resources/uucg_RNA.pdb",
-                    new_dir + "/rna.pdb")
-        f = open("jobs.dat","a")
-        f.write(new_dir + " " + str(10) + " "  + "\n")
-        f.close()
-
-        raise cherrypy.HTTPRedirect('/result/' + job_dir)
 
     @cherrypy.expose
     def design_primers(self, pdb_file, start_bp, end_bp, nstructs, email=""):
@@ -527,7 +542,8 @@ class rest:
             d_imgs = d_imgs,
             js_score_plot= get_js_score_plot(df),
             js_length_plot = get_js_length_plot(df),
-            js_eterna_score = get_js_eterna_score(df)
+            js_eterna_score = get_js_eterna_score(df),
+            design_infos = get_design_infos(df, job_id)
         )
 
     @cherrypy.expose

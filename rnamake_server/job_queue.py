@@ -7,7 +7,7 @@ class Job(object):
 
 class JobQueue(object):
     def __init__(self, db_name='jobs.db'):
-        self._setup_sqlite_con`nection(db_name)
+        self._setup_sqlite_connection(db_name)
         self.current_pos = self.get_last_run_job_num() + 1
 
     def _setup_sqlite_connection(self, db_name):

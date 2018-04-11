@@ -5,32 +5,63 @@
 
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="/res/js/jquery.tablesorter.min.js"></script>
+  <script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+  </script>
 
   <!--- css and js for boxes -->
-  <link href="/res/css/box_theme.css" rel="stylesheet">
+  <style>
+  .word-wrap {
+    word-break: break-word;
+  }
+
+  .no-wrap {
+    white-space: nowrap;
+  }
+
+  .small-td {
+    width: 5%;
+  }
+
+  .md-td {
+    width: 20%;
+  }
+
+  .tooltip-inner {
+    background-color: white;
+}
+.tooltip.bs-tooltip-right .arrow:before {
+    border-right-color: white !important;
+}
+.tooltip.bs-tooltip-left .arrow:before {
+    border-right-color: white !important;
+}
+.tooltip.bs-tooltip-bottom .arrow:before {
+    border-right-color: white !important;
+}
+.tooltip.bs-tooltip-top .arrow:before {
+    border-right-color: white !important;
+}
+
+</style>
 
 
 </head>
 
 <body>
 
-  {% import '/res/templates/nav.html' as nav %} {{nav.navbar('RNAMake Server', [['Home', '/index'], ['Tutorial', '/index'], ['How does it work?', '/about']])}}
+  {% import '/res/templates/nav.html' as nav %}
+  {{nav.navbar('')}}
 
   <div class="container">
     <h3>job:  {{job_id}}</h3>
-    <!-- best scoring designs-->
-    <div class="row">
-      <div id="mainwrapper">
-        {% for d_img in d_imgs %}
-        <div class="box">
-          <img src="{{d_img.path}}" width="170" />
-          <span class="caption simple-caption">
-          <h6>{{d_img.name}}</h6>
-        </span>
-        </div>
-        {% endfor %}
-      </div>
+
+    <div class="tooltip"><h2>Hover over me 1</h2>
+      <span class="tooltiptext">Test</span>
     </div>
+
     <div class="row">
       <div class="col-lg-4">
         <div id="score_plot"></div>
@@ -43,46 +74,35 @@
       </div>
     </div>
     <div class="row">
-      {{results_table}}
-      <table id="myTable" class="tablesorter table table-striped table-hover">
+      <table id="myTable" class="tablesorter table table-responsive">
         <thead>
           <tr>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Email</th>
-            <th>Due</th>
-            <th>Web Site</th>
+            <th class="no-wrap">Design</th>
+            <th class="no-wrap"><img src="/res/images/upanddown.jpg" width="15" />Design #</th>
+            <th class="no-wrap"><img src="/res/images/upanddown.jpg" width="15" />Score</th>
+            <th class="no-wrap"><img src="/res/images/upanddown.jpg" width="15" />Eterna Score</th>
+            <th class="no-wrap">Sequence</th>
+            <th class="no-wrap">Structure</th>
+            <th class="no-wrap">Motifs Used</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Smith</td>
-            <td>John</td>
-            <td>jsmith@gmail.com</td>
-            <td>$50.00</td>
-            <td>http://www.jsmith.com</td>
-          </tr>
-          <tr>
-            <td>Bach</td>
-            <td>Frank</td>
-            <td>fbach@yahoo.com</td>
-            <td>$50.00</td>
-            <td>http://www.frank.com</td>
-          </tr>
-          <tr>
-            <td>Doe</td>
-            <td>Jason</td>
-            <td>jdoe@hotmail.com</td>
-            <td>$100.00</td>
-            <td>http://www.jdoe.com</td>
-          </tr>
-          <tr>
-            <td>Conway</td>
-            <td>Tim</td>
-            <td>tconway@earthlink.net</td>
-            <td>$50.00</td>
-            <td>http://www.timconway.com</td>
-          </tr>
+          {% for info in design_infos %}
+            <tr>
+              <td><img src="{{info.img_path}}" /></td>
+              <td class="small-td">{{info.design_num}}</td>
+              <td class="small-td">{{info.score}}</td>
+              <td class="small-td">{{info.eterna_score}}</td>
+              <td class="word-wrap md-td">{{info.sequence}}</td>
+              <td class="word-wrap md-td">{{info.structure}}</td>
+              <td class="word-wrap md-td">
+                {% for m in info.motifs_used %}
+                  <a  href="#" data-placement="top" data-toggle="tooltip" data-html="true" title="<img src='/res/images/motifs/{{m.name}}.png' />">{{m.name}}</a><br />
+                {% endfor %}
+              </td>
+            </tr>
+          {% endfor %}
+
         </tbody>
       </table>
     </div>
@@ -99,6 +119,7 @@
     $(document).ready(function() {
       $("#myTable").tablesorter();
     });
+
   </script>
 
 
