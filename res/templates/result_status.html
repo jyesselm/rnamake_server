@@ -1,0 +1,29 @@
+<html>
+
+<head>
+  <meta http-equiv="refresh" content="30"/>
+  {% include '/res/templates/required_files.html' %}
+
+</head>
+
+<body>
+
+  {% import '/res/templates/nav.html' as nav %}
+  {{nav.navbar('')}}
+
+  <div class="container">
+    <br />
+    {% import '/res/templates/job_info.html' as job_info %}
+    {{job_info.job_info(j)}}
+
+    <hr>
+    {% include '/res/templates/supported_by.html' %}
+
+  </div>
+
+
+
+
+</body>
+
+</html>

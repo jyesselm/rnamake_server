@@ -56,11 +56,12 @@
   {{nav.navbar('')}}
 
   <div class="container">
-    <h3>job:  {{job_id}}</h3>
+    <br />
+    {% import '/res/templates/job_info.html' as job_info %}
+    {{job_info.job_info(j)}}
 
-    <div class="tooltip"><h2>Hover over me 1</h2>
-      <span class="tooltiptext">Test</span>
-    </div>
+    <hr />
+    <h2>Job Results: </h2>
 
     <div class="row">
       <div class="col-lg-4">
@@ -89,7 +90,7 @@
         <tbody>
           {% for info in design_infos %}
             <tr>
-              <td><img src="{{info.img_path}}" /></td>
+              <td><img src="{{info.img_path}}" width="250" /></td>
               <td class="small-td">{{info.design_num}}</td>
               <td class="small-td">{{info.score}}</td>
               <td class="small-td">{{info.eterna_score}}</td>

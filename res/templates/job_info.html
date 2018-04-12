@@ -1,0 +1,12 @@
+{% macro job_info(j) -%}
+<h2>Job Id: {{j.id}}</h2>
+<h5>Job Status: {{j.status_str() }} </h5>
+<h5>Job Type: {{j.type_str() }} </h5>
+<h5>Job Arguments:<br />
+    {% for k, v in j.args.iteritems() %}
+      &nbsp;&nbsp;&nbsp;&nbsp;{{k}}: {{v}}<br />
+    {% endfor %}
+</h5>
+<h5>Supplied PDB: </h5>
+<img src="/data/{{j.id}}/scaffold.png" width="300" />
+{%- endmacro %}

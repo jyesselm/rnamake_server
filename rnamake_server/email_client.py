@@ -4,7 +4,7 @@ import smtplib
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-SMTP_USERNAME = "rna.redesign.server@gmail.com"
+SMTP_USERNAME = "rnamake.server@gmail.com"
 SMTP_PASSWORD = "Ceichhor1"
 
 EMAIL_FROM = "email@gmail.com"
@@ -18,7 +18,7 @@ DATA='This is the content of the email.'
 
 def send_email(user_email, data_dir):
     DATA = """ Dear %s,
-    your RNA Design job is finished.
+    your RNAMake job is finished.
     See the results at
     http://rnaredesign.stanford.edu/result/%s
     """ % (user_email, data_dir)
@@ -36,4 +36,4 @@ def send_email(user_email, data_dir):
     mail.quit()
 
 if __name__=='__main__':
-    send_email()
+    send_email("jyesselm@stanford.edu", "test")

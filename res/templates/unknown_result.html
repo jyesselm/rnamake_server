@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  {% include '/res/templates/required_files.html' %}
+
+</head>
+
+<body>
+
+  {% import '/res/templates/nav.html' as nav %}
+  {{nav.navbar('')}}
+
+  <div class="container">
+    <h3>unknown job:  {{job_id}}</h3>
+
+    <hr>
+      {% include '/res/templates/supported_by.html' %}
+
+  </div>
+
+
+
+
+</body>
+
+</html>

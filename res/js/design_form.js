@@ -23,7 +23,9 @@ $(document).ready(function() {
 
 //form validation
 function FormValidation() {
-  var fields = ['pdb_file_name', 'start_bp', 'end_bp', 'nstructs']
+  // check to make sure all form items are filled
+  var fields = ['pdb_file_name', 'start_bp', 'end_bp', 'nstruct']
+  var fail = false;
   fields.forEach(function(field) {
     var fn = document.getElementById(field).value;
     if(fn == "") {
@@ -35,6 +37,34 @@ function FormValidation() {
 
     }
   });
+
+  // check to make sure nstruct is a number
+  var nstruct = parseInt(document.getElementById('nstruct').value);
+  if(isNaN(nstruct)) {
+    alert("# designs must be a number from 1 to 100");
+    return false;
+  }
+  if(nstruct > 100 || nstruct < 1) {
+    alert("# designs must be a number from 1 to 100");
+    return false;
+  }
+
+  // check to make sure that start_bp and end_bp are correctly formatted
+  fields = ['start_bp', 'end_bp']
+  fields.forEach(function(field) {
+    var fn = document.getElementById(field).value;
+    var spl = fn.split("-");
+    if(spl.length != 2) {
+      alert(
+        field + " must be composed of two residue names seperated by a '-'. " +
+        "Example: A221-A252, which is residue 221 on chain A base paired to residue " +
+        "252 also on chain A. For more info see detailed instructions");
+        return false;
+    }
+    console.log(spl);
+  });
+
+
 
   if(fail) { return false; }
   else     { return true;  }

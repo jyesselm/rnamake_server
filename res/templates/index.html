@@ -2,10 +2,6 @@
 <head>
 {% include '/res/templates/required_files.html' %}
 
-<!-- css and js for design_form --->
-<link href="/res/css/design_form.css" rel="stylesheet">
-<script src="/res/js/design_form.js"></script>
-
 <style>
 .card-img-top {
   height: 12rem;
@@ -21,6 +17,7 @@
 
 <div class="container">
   <br />
+
   {% include '/res/templates/jumbotron.html' %}
 
   <h2>Web Applications</h2>
@@ -32,7 +29,7 @@
         <div class="card-body">
           <h5 class="card-title">3D RNA Scaffolding</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Launch App</a>
+          <a href="/design_scaffold_app" class="btn btn-primary">Launch App</a>
         </div>
       </div>
     </div>
@@ -50,9 +47,9 @@
     </div>
   </div>
 
-
-<hr>
-{% include '/res/templates/supported_by.html' %}
+  <hr>
+  {% include '/res/templates/supported_by.html' %}
+</div>
 
 </body>
 </html>

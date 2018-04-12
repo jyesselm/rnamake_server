@@ -3,21 +3,19 @@ import pandas as pd
 from cherrypy.lib.static import serve_file
 from jinja2 import Environment, FileSystemLoader
 
-
 import os
-import random
 import string
 import sys
-import shutil
-import subprocess
 import glob
-import time
+import json
+import argparse
 
 from collections import namedtuple
 
-import rnamake_server.html_page
-from rnamake_server import html_page_new
-from rnamake_server import navbar
+from rnamake import resource_manager as rm
+
+from rnamake_server import job_queue, tools
+
 
 DesignImage = namedtuple('DesignImage', ['path', 'name'])
 DesignInfo = namedtuple('DesignInfo', ['img_path', 'design_num', 'score',
@@ -31,136 +29,16 @@ DATA_BASE_DIR = MEDIA_DIR + "/data/"
 j2_env = Environment(loader=FileSystemLoader(MEDIA_DIR),
                      trim_blocks=True)
 
-class BasePage(rnamake_server.html_page.HTMLPage):
-    def __init__(self):
-       super(BasePage, self).__init__()
-       self.add_element ( rnamake_server.html_page.HTMLFileTemplate("head.html") )
-       self.add_element ( rnamake_server.html_page.HTMLFileTemplate("navbar.html") )
 
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-mode', help='what mode is the server being run in', required=True,
+                        choices=['devel', 'release'], type=str)
+    parser.add_argument('-no_job_creation', required=False, action="store_true")
 
-class ResultsWaitingPage(BasePage):
-    def __init(self):
-       super(ResultsWaitingPage, self).__init__()
+    args = parser.parse_args()
 
-    def _get_job_pos(self, data_dir):
-        f = open(MEDIA_DIR + '/jobs.dat')
-        lines = f.readlines()
-        f.close()
-
-        for i, l in enumerate(lines):
-            if data_dir in l:
-                return i
-
-    def _remove_job(self, data_dir):
-        f = open(MEDIA_DIR + '/jobs.dat')
-        lines = f.readlines()
-        f.close()
-
-        f = open(MEDIA_DIR + '/jobs.dat', 'w')
-        for l in lines:
-            if data_dir in l:
-                continue
-            f.write(l)
-
-        f.close()
-
-    def _progress_bar_status(self, data_dir):
-        path = DATA_BASE_DIR + data_dir + "/start.pdb"
-        if not os.path.isfile(path):
-            job_pos = self._get_job_pos(data_dir)
-            return ["Queued, "+str(job_pos) + " jobs ahead", 0]
-
-        path = DATA_BASE_DIR + data_dir + "/S_0001.pdb"
-        if not os.path.isfile(path):
-            return ["Running", 50]
-
-	    return ["Generating Results Page", 90]
-
-    def _is_pdb_valid(self, data_dir):
-        os.chdir(DATA_BASE_DIR + data_dir)
-        subprocess.call("make_rna_rosetta_ready.py -remove_ions rna.pdb",
-                        shell=True)
-
-        f = open("rna_RNA.pdb")
-        lines = f.readlines()
-        f.close()
-        if len(lines) == 0:
-            return -1
-
-        pos = 4
-        spl = lines[0].split()
-        try:
-            num = int(spl[pos])
-        except:
-            pos = 5
-
-        nums = []
-        for l in lines:
-            spl = l.split()
-            num = int(spl[pos])
-            if num not in nums:
-                nums.append(num)
-
-        os.chdir(MEDIA_DIR)
-        if len(nums) > 100:
-            return 0
-        else:
-            return 1
-
-    def render(self, data_dir):
-        try:
-            status, percent = self._progress_bar_status(data_dir)
-        except:
-            status, percent = "Generating Results Page", 90
-
-        if percent == 0:
-            if not os.path.isfile(DATA_BASE_DIR+data_dir+'/rna_RNA.pdb'):
-                result = self._is_pdb_valid(data_dir)
-                if result == -1:
-                    status = "Error: not a valid PDB"
-                    percent = -1
-
-                elif result == 0:
-                    status = "Error: RNA larger then 100nt"
-                    percent = -1
-
-                if percent == -1:
-                    f = open(DATA_BASE_DIR+data_dir+'/ERROR', 'w')
-                    f.write(status+"\n")
-                    f.close()
-
-        if os.path.isfile(DATA_BASE_DIR+data_dir+'/ERROR'):
-            percent = -1
-            f = open(DATA_BASE_DIR+data_dir+'/ERROR')
-            lines = f.readlines()
-            f.close()
-            status = lines[0]
-
-        if percent == -1:
-            self._remove_job(data_dir)
-            title = "<H1>"+status+"</H1>"
-            progress_bar =  rna_design.html_page.HTMLPage()
-        else:
-            title = "<H1> Job Status: %s</H1>" % (status)
-            progress_bar =  rna_design.html_page.ProgressBar(percent)
-        waiting_table = ""
-
-        body = """
-        <div class="container">
-        %s
-        %s
-        %s
-        </div>
-        """ % (title, progress_bar.body, waiting_table)
-
-        self.body += body
-        self.javascript += """
-                setTimeout(function(){
-                window.location.reload(1);
-                 }, 60000);
-        """
-
-        return percent
+    return args
 
 
 def is_valid_name(input, char_allow, length):
@@ -467,7 +345,6 @@ def get_design_infos(df, job_id):
     design_infos = []
     count = 1
     for i, row in df.iterrows():
-        structure = "".join(["." for x in row.opt_sequence])
         motif_uses = []
         spl = row.motifs_uses.split(";")
         for e in spl[:-1]:
@@ -477,17 +354,23 @@ def get_design_infos(df, job_id):
             count += 1
 
         design_infos.append(
-            DesignInfo("/data/"+job_id+"/design_"+str(row.design_num)+".png",
+            DesignInfo("/data/"+job_id+"/design."+str(row.design_num)+".png",
                        row.design_num,
                        row.opt_score,
                        row.eterna_score,
                        row.opt_sequence,
-                       structure,
+                       row.design_structure,
                        motif_uses))
     return design_infos
 
 
-class rest:
+class RNAMakeServer:
+    def __init__(self, mode, no_job_creation):
+        self.mode = mode
+        self.job_queue = job_queue.JobQueue()
+        self.no_job_creation = no_job_creation
+        self.design_scaffold_error = ''
+
 
     @cherrypy.expose
     def index(self):
@@ -499,95 +382,145 @@ class rest:
         about = j2_env.get_template("res/templates/about.html")
         return about.render()
 
-
     @cherrypy.expose
-    def design_scaffold(self, pdb_file, start_bp, end_bp, nstructs, email=""):
-        pass
+    def design_scaffold_app(self):
+        app = j2_env.get_template("/res/templates/design_scaffold.html")
+        error = self.design_scaffold_error
+        self.design_scaffold_error = ''
+        return app.render(
+            error=error
+        )
 
-
-    @cherrypy.expose
-    def design_primers(self, pdb_file, start_bp, end_bp, nstructs, email=""):
-
+    # helper functions
+    def setup_job_dir(self, pdb_file, pdb_name):
         job_dir = os.urandom(16).encode('hex')
-        new_dir = "data/"+job_dir
+        new_dir = "data/" + job_dir
         os.mkdir(new_dir)
 
-        f = open(new_dir + "/rna.pdb", "w")
+        f = open(new_dir + "/" + pdb_name +".pdb", "w")
         while True:
             data = pdb_file.file.read(8192)
             f.write(data)
             if not data:
                 break
 
-        f.close()
+        #if self.mode == "devel":
+        #    tools.render_pdb_to_png_mac(new_dir + "/" + pdb_name +".pdb")
 
-        f = open("jobs.dat","a")
-        f.write(new_dir + " " + nstructs + " " + email + "\n")
-        f.close()
+        return job_dir
 
-        raise cherrypy.HTTPRedirect('/result/' + job_dir)
+    # validate scaffold pdb
+    def _load_scaffold_pdb(self, job_id, pdb):
+        try:
+            m = rm.manager.get_structure("data/"+job_id+"/"+pdb, pdb[:-4])
+        except:
+            return None, "not a valid PDB"
+
+        if len(m.residues()) > 100:
+            return None, "RNA is too large for server, must be under 100 residues." \
+                         " Please download RNAMake and run locally for larger jobs."
+
+        return m, None
+
+
+    def _check_basepair_ends_exist(self, m, start_bp, end_bp):
+        bps = [start_bp, end_bp]
+        # do residues exist?
+        for bp in bps:
+            spl = bp.split("-")
+            r = m.get_residue(num=int(spl[0][1:]), chain_id=spl[0][0])
+            if r is None:
+                return "residue: "+spl[0]+" does not exist in supplied pdb, it is " +\
+                       "parsed to have chain id: " + spl[0][0] + " and residue number: " +\
+                       spl[0][1:]
+
+            r = m.get_residue(num=int(spl[1][1:]), chain_id=spl[1][0])
+            if r is None:
+                return "residue: "+spl[1]+" does not exist in supplied pdb, it is " +\
+                       "parsed to have chain id: " + spl[1][0] + " and residue number: " +\
+                       spl[1][1:]
+
+        for bp_name in bps:
+            bp = m.get_basepair(name=bp_name)
+            spl = bp_name.split("-")
+            bp_reverse_name = spl[1] + "-" + spl[0]
+            bp_reverse = m.get_basepair(name=bp_reverse_name)
+
+            if len(bp) == 0 and len(bp_reverse) == 0:
+                return "basepair: " + bp_name + " does not exist! both residues exist but no" +\
+                       " basepair between them!"
+
+            # user submitted the name backwards
+            if len(bp) == 0 and len(bp_reverse) != 0:
+                bp_name = bp_reverse_name
+
+            try:
+                end = m.get_end_index(name=bp_name)
+            except:
+                return "basepair: " + bp_name + " exists but it is not a basepair end " +\
+                       " which is defined by an base pair with residues that are both at the " +\
+                       " end of RNA chains, are Watson-Crick and contain a 5' and 3' residue"
+
+
+        return None
+
+    @cherrypy.expose
+    def design_scaffold(self, pdb_file, start_bp, end_bp, nstruct, email=""):
+        job_id = self.setup_job_dir(pdb_file, "scaffold")
+
+        args = {
+            'nstruct': nstruct,
+            'start_bp': start_bp,
+            'end_bp': end_bp
+        }
+
+        m, error = self._load_scaffold_pdb(job_id, "scaffold.pdb")
+        if error is not None:
+            self.design_scaffold_error = "alert(\"" + error + "\");"
+            raise cherrypy.HTTPRedirect('/design_scaffold_app')
+
+        error = self._check_basepair_ends_exist(m, start_bp, end_bp)
+        if error is not None:
+            print error
+            self.design_scaffold_error = "alert(\"" + error + "\");"
+            raise cherrypy.HTTPRedirect('/design_scaffold_app')
+
+
+
+        if not self.no_job_creation:
+            self.job_queue.add_job(job_id, job_queue.JobType.SCAFFOLD, json.dumps(args))
+            cherrypy.log("created new job: " + job_id)
+            raise cherrypy.HTTPRedirect('/result/' + job_id)
+        else:
+            raise cherrypy.HTTPRedirect('/design_scaffold_app')
+
+
 
     @cherrypy.expose
     def result(self, job_id):
+        # unknown job id
+        if not os.path.isdir("data/" + job_id):
+            app = j2_env.get_template("/res/templates/unknown_result.html")
+            return app.render(
+                job_id = job_id)
+
+        # job not completed
+        j = self.job_queue.get_job(job_id)
+        if j.status == job_queue.JobStatus.QUEUED:
+            app = j2_env.get_template("/res/templates/result_status.html")
+            return app.render(
+                j = j)
+
+
         df = pd.read_csv("data/"+ job_id + "/default.scores")
-
-        imgs = glob.glob("data/" + job_id + "/design_*")
-        d_imgs = []
-        for i, img in enumerate(imgs):
-            d_imgs.append(DesignImage("/"+img, "Design " + str(i)))
-
         results = j2_env.get_template("res/templates/results.html")
         return results.render(
-            job_id = job_id,
-            d_imgs = d_imgs,
+            j = j,
             js_score_plot= get_js_score_plot(df),
             js_length_plot = get_js_length_plot(df),
             js_eterna_score = get_js_eterna_score(df),
             design_infos = get_design_infos(df, job_id)
         )
-
-    @cherrypy.expose
-    def old_result(self, dir_id):
-        # job not done show waiting page
-        path = DATA_BASE_DIR + dir_id + "/weblogo.png"
-        error = DATA_BASE_DIR + dir_id + "/ERROR"
-        if not os.path.isfile(path) or os.path.isfile(error):
-            page = ResultsWaitingPage()
-            percent = page.render(dir_id)
-            return page.to_str()
-
-        # job is done show results
-        all_path =  DATA_BASE_DIR + dir_id + "/all.zip"
-
-        s = get_html_head()
-        s += " <script type=\"text/javascript\">\nwindow.onload = function () {\n"
-        recovery_file = "data/" + dir_id + "/rna_RNA.sequence_recovery.txt"
-        summary_file = "data/" + dir_id + "/summary.txt"
-        score_file = "data/" + dir_id + "/rna_RNA.pack.out"
-        sequence_file = "data/" + dir_id + "/rna_RNA.pack.txt"
-        s += get_js_native_recovery_chart(recovery_file)
-        s += get_js_energy_vs_sequence_identity(summary_file)
-        s += "}\n</script></head>"
-        s += "<body>\n"
-        s += get_nav_bar()
-        s += "<center><H2>Job "+dir_id + " Results </H2></center>"
-        s += """<div class=\"starter-template\">
-         <div class=\"container theme-showcase\" role=\"main\">"""
-
-        #s += "<a href=/download/?filepath=%s><button type=\"button\" \
-        #      class=\"btn btn-primary\">Download Everything</button></a>" % (all_path)
-        s += "<a href=/download/?dir_id=%s&data=all><button type=\"button\" \
-              class=\"btn btn-primary\">Download Everything</button></a>" % (dir_id)
-        s += "<br><br><br>"
-
-        s += get_cluster_table(dir_id)
-        s += "<br /><br />"
-        s += "<img src=/data/"+dir_id+"/weblogo.png />"
-        s += "<div id=\"NativeRecovery\" style=\"height: 300px; width: 100%; \"></div>"
-        s += "<div id=\"EnergyScatter\" style=\"height: 300px; width: 100%; \"></div>"
-        s += "</body></html>"
-
-        return s
 
 
 class Download:
@@ -599,17 +532,11 @@ class Download:
 
 
 if __name__ == "__main__":
-    #n = navbar.NavBarHeader("RNA Redesign", link="/res/html/Design.html")
-    #print n.body
+    args = parse_args()
 
-    #exit()
 
-    server_state = "development"
-    if len(sys.argv) > 1:
-        server_state = sys.argv[1]
-    if server_state not in ("development","release"):
-        raise SystemError("ERROR: Only can do development or release")
-    if server_state == "development":
+    server_state = args.mode
+    if server_state == "devel":
         socket_host = "127.0.0.1"
         socket_port = 8080
     else:
@@ -622,10 +549,10 @@ if __name__ == "__main__":
         "server.socket_port":socket_port,
         "tools.staticdir.root": os.path.abspath(os.path.join(os.path.dirname(__file__), ""))
     } )
-    root = rest()
+    root = RNAMakeServer(server_state, args.no_job_creation)
     root.download = Download()
 
-    if server_state == "development":
+    if server_state == "devel":
         cherrypy.quickstart(root, "", "test.conf")
     else:
         cherrypy.quickstart(root, "", "app.conf")
