@@ -370,6 +370,7 @@ class RNAMakeServer:
         self.job_queue = job_queue.JobQueue()
         self.no_job_creation = no_job_creation
         self.design_scaffold_error = ''
+        self.atp_stablization_error = ''
 
 
     @cherrypy.expose
@@ -410,7 +411,7 @@ class RNAMakeServer:
         return job_dir
 
     # validate scaffold pdb
-    def _load_scaffold_pdb(self, job_id, pdb):
+    def _load_structure(self, job_id, pdb):
         try:
             m = rm.manager.get_structure("data/"+job_id+"/"+pdb, pdb[:-4])
         except:
@@ -421,7 +422,6 @@ class RNAMakeServer:
                          " Please download RNAMake and run locally for larger jobs."
 
         return m, None
-
 
     def _check_basepair_ends_exist(self, m, start_bp, end_bp):
         bps = [start_bp, end_bp]
@@ -474,7 +474,7 @@ class RNAMakeServer:
             'end_bp': end_bp
         }
 
-        m, error = self._load_scaffold_pdb(job_id, "scaffold.pdb")
+        m, error = self._load_structure(job_id, "scaffold.pdb")
         if error is not None:
             self.design_scaffold_error = "alert(\"" + error + "\");"
             raise cherrypy.HTTPRedirect('/design_scaffold_app')
@@ -494,7 +494,34 @@ class RNAMakeServer:
         else:
             raise cherrypy.HTTPRedirect('/design_scaffold_app')
 
+    @cherrypy.expose
+    def apt_stablization_app(self):
+        app = j2_env.get_template("/res/templates/apt_stablization.html")
+        error = self.atp_stablization_error
+        self.atp_stablization_error = ''
+        return app.render(
+            error=error
+        )
 
+    @cherrypy.expose
+    def apt_stablization(self, pdb_file, nstruct, email=""):
+        job_id = self.setup_job_dir(pdb_file, "aptamer")
+
+        m, error = self._load_structure(job_id, "aptamer.pdb")
+        if error is not None:
+            self.atp_stablization_error = "alert(\"" + error + "\");"
+            raise cherrypy.HTTPRedirect('/apt_stablization_app')
+
+        args = {
+            'nstruct': nstruct
+        }
+
+        if not self.no_job_creation:
+            self.job_queue.add_job(job_id, job_queue.JobType.APT_STABLIZATION, json.dumps(args))
+            cherrypy.log("created new job: " + job_id)
+            raise cherrypy.HTTPRedirect('/result/' + job_id)
+        else:
+            raise cherrypy.HTTPRedirect('/apt_stablization_app')
 
     @cherrypy.expose
     def result(self, job_id):
@@ -522,13 +549,14 @@ class RNAMakeServer:
             design_infos = get_design_infos(df, job_id)
         )
 
+    @cherrypy.expose
+    def download(self, f_path):
+        spl = f_path.split("/")
+        if spl[0] != "data":
+            raise cherrypy.HTTPError(401, 'Unauthorized')
 
-class Download:
-
-    def index(self, dir_id, data):
-        filepath =  DATA_BASE_DIR + dir_id + "/all.zip"
+        filepath =  os.path.abspath(f_path)
         return serve_file(filepath, "application/x-download", "attachment")
-    index.exposed = True
 
 
 if __name__ == "__main__":
@@ -550,11 +578,37 @@ if __name__ == "__main__":
         "tools.staticdir.root": os.path.abspath(os.path.join(os.path.dirname(__file__), ""))
     } )
     root = RNAMakeServer(server_state, args.no_job_creation)
-    root.download = Download()
 
     if server_state == "devel":
         cherrypy.quickstart(root, "", "test.conf")
     else:
         cherrypy.quickstart(root, "", "app.conf")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

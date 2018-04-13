@@ -1,0 +1,36 @@
+<h2>Submit your RNA Aptamer Stablization Job</h2>
+<form method='post' class="form-horizontal" action='apt' onsubmit="return FormValidation();" enctype="multipart/form-data">
+  <div class="form-row">
+    <!-- file upload -->
+    <div class="form-group col-lg-9">
+      <label for="nstructs ">Aptamer PDB</label>
+      <div class="input-group" id="design-form">
+        <span class="input-group-btn">
+      <span class="btn btn-primary btn-file">
+          Select RNA PDB: <input type="file" name="pdb_file" id="pdb_file" />
+      </span>
+        </span>
+        <input type="text" class="form-control" id="pdb_file_name" style="width:40%" readonly>
+      </div>
+    </div>
+    <div class="form-group col-lg-2">
+      <label for="nstructs "># Designs</label>
+      <input type="text " class="form-control " name="nstruct" id="nstruct" placeholder="10 ">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-lg-12">
+      <label for="inputEmail4">Email</label>
+      <input type="text" class="form-control" name="email" id="email" placeholder="Optional (To recieve email when job is done)" style="width:90%">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-lg-12">
+      <button role="button" type="Submit" class="btn btn-primary">Submit</button>
+      <a class="btn btn-secondary" href="/result/0f1d384952e7a06bd86764d15777dd3f" role="button">Example Results</a>
+
+      <!-- <a href="/example_uucg " id="btn_demo " class="btn btn-warning " data-toggle="tooltip " data-placement="bottom " title=" " data-original-title="Example of RNA Redesign using a UUCG tetraloop. ">&nbsp;&nbsp;Demo&nbsp;&nbsp;</a>
+      -->
+    </div>
+  </div>
+</form>

@@ -125,7 +125,6 @@ class ScaffoldDesignJob(threading.Thread):
         self.j = j
 
     def run(self):
-        #TODO add errors for improper pdb formats
         os.chdir("data/"+self.j.id)
         subprocess.call("design_rna -pdb scaffold.pdb"
                         " -start_bp %s -end_bp %s -designs %s -pdbs " %
@@ -146,6 +145,24 @@ class ScaffoldDesignJob(threading.Thread):
             raise ValueError("mode: " + self.mode  + " is not supported ")
 
         self.success = 1
+
+    def join(self):
+        threading.Thread.join(self)
+        return self.success
+
+
+class APTStablizationJob(threading.Thread):
+    def __init__(self, mode, j):
+        threading.Thread.__init__(self)
+        self.mode = mode
+        self.success = 0
+        self.j = j
+
+
+    def run(self):
+        os.chdir("data/"+self.j.id)
+
+
 
     def join(self):
         threading.Thread.join(self)
