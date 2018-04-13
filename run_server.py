@@ -405,8 +405,10 @@ class RNAMakeServer:
             if not data:
                 break
 
-        #if self.mode == "devel":
-        #    tools.render_pdb_to_png_mac(new_dir + "/" + pdb_name +".pdb")
+        if self.mode == "devel":
+            tools.render_pdb_to_png_mac(new_dir + "/" + pdb_name +".pdb")
+        else:
+            tools.render_pdb_to_png(new_dir + "/" + pdb_name +".pdb")
 
         return job_dir
 
