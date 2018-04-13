@@ -63,6 +63,7 @@ class JobQueue(object):
             self.connection.execute('CREATE TABLE jobs( id TEXT, status INT, \
                                      type INT, args TEXT, email TEXT, time TEXT, \
                                      num INT, PRIMARY KEY(id));')
+            self.connection.commit()
 
 
 
