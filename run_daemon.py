@@ -141,6 +141,9 @@ class ScaffoldDesignJob(threading.Thread):
         if self.mode == "devel":
             for pdb_file in pdb_files:
                 tools.render_pdb_to_png_mac(pdb_file)
+        elif self.mode == "release":
+            for pdb_file in pdb_files:
+                tools.render_pdb_to_png(pdb_file)
         else:
             raise ValueError("mode: " + self.mode  + " is not supported ")
 
@@ -226,73 +229,4 @@ if __name__ == "__main__":
 
 
 
-
-
-exit()
-
-
-server_state = "development"
-if len(sys.argv) > 1:
-    server_state = sys.argv[1]
-if server_state not in ("development","release"):
-    raise SystemError("ERROR: Only can do development or release")
-
-fr = open("run_jobs", "a")
-
-while True:
-
-
-    f = open("jobs.dat")
-    lines = f.readlines()
-    f.close()
-
-    if len(lines) == 0:
-        time.sleep(60)
-        continue
-
-    print "job detected!"
-
-    spl = lines[0].split()
-    cl = lines.pop(0)
-
-    job_dir = spl[0]
-    nstruct = int(spl[1])
-    email=None
-
-    if len(spl) > 2:
-        email = spl[2].rstrip()
-    os.chdir(job_dir)
-    try:
-        run_redesign(int(nstruct), 4)
-    except:
-        write_error_file('rna_redesign failed')
-        os.chdir("../..")
-        update_jobs_file(lines)
-        continue
-
-    get_top_clusters()
-    try:
-        get_top_clusters()
-    except:
-        write_error_file('generating top models failed')
-        os.chdir("../..")
-        update_jobs_file(lines)
-        continue
-
-    try:
-        generate_weblogo()
-    except:
-        write_error_file('generating weblogo failed')
-        os.chdir("../..")
-        update_jobs_file(lines)
-        continue
-
-    os.chdir("../..")
-    print "job completed"
-
-    if email is not None:
-        rna_design.email_client.send_email(email, job_dir[5:])
-
-    fr.write(cl)
-    update_jobs_file(lines)
 
