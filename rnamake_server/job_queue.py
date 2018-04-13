@@ -59,11 +59,12 @@ class JobQueue(object):
     def _setup_sqlite_connection(self, db_name):
         self.connection = sqlite3.connect(db_name, check_same_thread=False)
 
-        if not os.path.isfile(db_name):
+        try:
             self.connection.execute('CREATE TABLE jobs( id TEXT, status INT, \
                                      type INT, args TEXT, email TEXT, time TEXT, \
                                      num INT, PRIMARY KEY(id));')
-            self.connection.commit()
+        except:
+            pass
 
 
 
