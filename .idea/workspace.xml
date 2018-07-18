@@ -1,0 +1,1003 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ca4ecd11-dd8b-4142-b912-f1ef4a8e8ca5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/job_queries.py" afterPath="$PROJECT_DIR$/job_queries.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/templates/design_scaffold.html" afterPath="$PROJECT_DIR$/res/templates/design_scaffold.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/templates/stablization_form.html" afterPath="$PROJECT_DIR$/res/templates/stablization_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rnamake_server/job_queue.py" afterPath="$PROJECT_DIR$/rnamake_server/job_queue.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rnamake_server/tools.py" afterPath="$PROJECT_DIR$/rnamake_server/tools.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_daemon.py" afterPath="$PROJECT_DIR$/run_daemon.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_server.py" afterPath="$PROJECT_DIR$/run_server.py" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="run_server.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run_server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="445" column="22" lean-forward="false" selection-start-line="445" selection-start-column="22" selection-end-line="445" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#427#557#0" expanded="false" />
+                <element signature="e#819#1140#0" expanded="false" />
+                <element signature="e#1194#1369#0" expanded="false" />
+                <element signature="e#1404#1711#0" expanded="false" />
+                <element signature="e#1757#2821#0" expanded="false" />
+                <element signature="e#1821#2262#0" expanded="false" />
+                <element signature="e#2287#2383#0" expanded="false" />
+                <element signature="e#2494#2721#0" expanded="false" />
+                <element signature="e#2732#2807#0" expanded="false" />
+                <element signature="e#2873#4149#0" expanded="false" />
+                <element signature="e#3021#3195#0" expanded="false" />
+                <element signature="e#3298#3500#0" expanded="false" />
+                <element signature="e#3602#3843#0" expanded="false" />
+                <element signature="e#3884#4049#0" expanded="false" />
+                <element signature="e#4060#4135#0" expanded="false" />
+                <element signature="e#4181#4335#0" expanded="false" />
+                <element signature="e#4373#4599#0" expanded="false" />
+                <element signature="e#4632#5540#0" expanded="false" />
+                <element signature="e#4773#5517#0" expanded="false" />
+                <element signature="e#5574#6463#0" expanded="false" />
+                <element signature="e#5728#6441#0" expanded="false" />
+                <element signature="e#6498#7406#0" expanded="false" />
+                <element signature="e#6647#7384#0" expanded="false" />
+                <element signature="e#7446#8101#0" expanded="false" />
+                <element signature="e#7519#8077#0" expanded="false" />
+                <element signature="e#7615#7729#0" expanded="false" />
+                <element signature="e#8423#8509#0" expanded="false" />
+                <element signature="e#8561#8646#0" expanded="false" />
+                <element signature="e#9776#10036#0" expanded="false" />
+                <element signature="e#9912#10018#0" expanded="false" />
+                <element signature="e#10119#10489#0" expanded="false" />
+                <element signature="e#10307#10465#0" expanded="false" />
+                <element signature="e#10314#10465#0" expanded="false" />
+                <element signature="e#10320#10465#0" expanded="false" />
+                <element signature="e#10562#12258#0" expanded="false" />
+                <element signature="e#10651#11291#0" expanded="false" />
+                <element signature="e#10784#10980#0" expanded="false" />
+                <element signature="e#11095#11291#0" expanded="false" />
+                <element signature="e#11333#12236#0" expanded="false" />
+                <element signature="e#11589#11718#0" expanded="false" />
+                <element signature="e#11970#12236#0" expanded="false" />
+                <element signature="e#12433#12539#0" expanded="false" />
+                <element signature="e#12647#12767#0" expanded="false" />
+                <element signature="e#13077#13269#0" expanded="false" />
+                <element signature="e#13414#13625#0" expanded="false" />
+                <element signature="e#13717#14420#0" expanded="false" />
+                <element signature="e#13909#14031#0" expanded="false" />
+                <element signature="e#14048#14090#0" expanded="false" />
+                <element signature="e#14141#14341#0" expanded="false" />
+                <element signature="e#15617#15848#0" expanded="false" />
+                <element signature="e#15882#16550#0" expanded="false" />
+                <element signature="e#15973#16025#0" expanded="false" />
+                <element signature="e#16044#16094#0" expanded="false" />
+                <element signature="e#16124#16343#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tools.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rnamake_server/tools.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tests.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run_daemon.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run_daemon.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#524#3073#0" expanded="false" />
+                <element signature="e#3100#3342#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="job_queries.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/job_queries.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>bs4</find>
+      <find>Parser</find>
+      <find>%</find>
+      <find>get_nav_bar</find>
+      <find>_parse_str_arg</find>
+      <find>RunJobThread</find>
+      <find>start</find>
+      <find>mode</find>
+      <find>get_js_eterna_score</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/rnamake_server/html_page.py" />
+        <option value="$PROJECT_DIR$/rnamake_server/navbar.py" />
+        <option value="$PROJECT_DIR$/../../RNAMake/rnamake/lib/RNAMake/cmake/build/sort_constraints.py" />
+        <option value="$PROJECT_DIR$/../../RNAMake/rnamake/lib/RNAMake/cmake/build/plot_cuttoffs.py" />
+        <option value="$PROJECT_DIR$/../../RNAMake/rnamake/lib/RNAMake/cmake/build/plot.py" />
+        <option value="$PROJECT_DIR$/../stablize_spinach/apt_first/get_unique_solutions.py" />
+        <option value="$PROJECT_DIR$/rnamake_server/unittests/html_unittest.py" />
+        <option value="$PROJECT_DIR$/rnamake_server/html.py" />
+        <option value="$PROJECT_DIR$/rnamake_server/unittests/test_jinja2.py" />
+        <option value="$PROJECT_DIR$/rnamake_server/html_page_new.py" />
+        <option value="$PROJECT_DIR$/data/c32af6417fb183e71c662232091ce548/run.py" />
+        <option value="$PROJECT_DIR$/res/images/render_motifs.py" />
+        <option value="$PROJECT_DIR$/rnamake_server/email_client.py" />
+        <option value="$PROJECT_DIR$/run_daemon.py" />
+        <option value="$PROJECT_DIR$/rnamake_server/tools.py" />
+        <option value="$USER_HOME$/Dropbox/RNAMake.Paper/FirstSubmission/Data/spinach_ttr_analysis/plot.py" />
+        <option value="$PROJECT_DIR$/../ribosome_tether/test_mg.py" />
+        <option value="$PROJECT_DIR$/fix_data.py" />
+        <option value="$PROJECT_DIR$/rnamake_server/job_queue.py" />
+        <option value="$PROJECT_DIR$/run_server.py" />
+        <option value="$PROJECT_DIR$/tests.py" />
+        <option value="$PROJECT_DIR$/job_queries.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1038" />
+    <option name="y" value="412" />
+    <option name="width" value="673" />
+    <option name="height" value="1020" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/jyesselm/projects/RNAMake.projects/rnamake_server/run_server.py" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="rnamake_server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="rnamake_server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="rnamake_server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="rnamake_server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="rnamake_server" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="rnamake_server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="rnamake_server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ca4ecd11-dd8b-4142-b912-f1ef4a8e8ca5" name="Default" comment="" />
+      <created>1519417248611</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1519417248611</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1038" y="412" width="673" height="1020" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24881141" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285568" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24881141" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="27" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/job_queries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ribosome_tether/test_mg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1272">
+          <caret line="525" column="33" lean-forward="false" selection-start-line="525" selection-start-column="33" selection-end-line="525" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#427#557#0" expanded="false" />
+            <element signature="e#819#1140#0" expanded="false" />
+            <element signature="e#1194#1369#0" expanded="false" />
+            <element signature="e#1404#1711#0" expanded="false" />
+            <element signature="e#1757#2821#0" expanded="false" />
+            <element signature="e#1821#2262#0" expanded="false" />
+            <element signature="e#2287#2383#0" expanded="false" />
+            <element signature="e#2494#2721#0" expanded="false" />
+            <element signature="e#2732#2807#0" expanded="false" />
+            <element signature="e#2873#4149#0" expanded="false" />
+            <element signature="e#3021#3195#0" expanded="false" />
+            <element signature="e#3298#3500#0" expanded="false" />
+            <element signature="e#3602#3843#0" expanded="false" />
+            <element signature="e#3884#4049#0" expanded="false" />
+            <element signature="e#4060#4135#0" expanded="false" />
+            <element signature="e#4181#4335#0" expanded="false" />
+            <element signature="e#4373#4599#0" expanded="false" />
+            <element signature="e#4632#5540#0" expanded="false" />
+            <element signature="e#4773#5517#0" expanded="false" />
+            <element signature="e#5574#6463#0" expanded="false" />
+            <element signature="e#5728#6441#0" expanded="false" />
+            <element signature="e#6498#7406#0" expanded="false" />
+            <element signature="e#6647#7384#0" expanded="false" />
+            <element signature="e#7446#8101#0" expanded="false" />
+            <element signature="e#7519#8077#0" expanded="false" />
+            <element signature="e#7615#7729#0" expanded="false" />
+            <element signature="e#8423#8509#0" expanded="false" />
+            <element signature="e#8561#8646#0" expanded="false" />
+            <element signature="e#9776#10036#0" expanded="false" />
+            <element signature="e#9912#10018#0" expanded="false" />
+            <element signature="e#10119#10489#0" expanded="false" />
+            <element signature="e#10307#10465#0" expanded="false" />
+            <element signature="e#10314#10465#0" expanded="false" />
+            <element signature="e#10320#10465#0" expanded="false" />
+            <element signature="e#10562#12258#0" expanded="false" />
+            <element signature="e#10651#11291#0" expanded="false" />
+            <element signature="e#10784#10980#0" expanded="false" />
+            <element signature="e#11095#11291#0" expanded="false" />
+            <element signature="e#11333#12236#0" expanded="false" />
+            <element signature="e#11589#11718#0" expanded="false" />
+            <element signature="e#11970#12236#0" expanded="false" />
+            <element signature="e#12433#12539#0" expanded="false" />
+            <element signature="e#12647#12767#0" expanded="false" />
+            <element signature="e#13077#13269#0" expanded="false" />
+            <element signature="e#13414#13625#0" expanded="false" />
+            <element signature="e#13717#14420#0" expanded="false" />
+            <element signature="e#13909#14031#0" expanded="false" />
+            <element signature="e#14048#14090#0" expanded="false" />
+            <element signature="e#14141#14341#0" expanded="false" />
+            <element signature="e#15617#15848#0" expanded="false" />
+            <element signature="e#15882#16550#0" expanded="false" />
+            <element signature="e#15973#16025#0" expanded="false" />
+            <element signature="e#16044#16094#0" expanded="false" />
+            <element signature="e#16124#16343#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/job_queue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="89" column="20" lean-forward="false" selection-start-line="89" selection-start-column="20" selection-end-line="89" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/job_queries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_daemon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#524#3073#0" expanded="false" />
+            <element signature="e#3100#3342#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../stablize_spinach/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1272">
+          <caret line="525" column="33" lean-forward="true" selection-start-line="525" selection-start-column="33" selection-end-line="525" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#427#557#0" expanded="false" />
+            <element signature="e#819#1140#0" expanded="false" />
+            <element signature="e#1194#1369#0" expanded="false" />
+            <element signature="e#1404#1711#0" expanded="false" />
+            <element signature="e#1757#2821#0" expanded="false" />
+            <element signature="e#1821#2262#0" expanded="false" />
+            <element signature="e#2287#2383#0" expanded="false" />
+            <element signature="e#2494#2721#0" expanded="false" />
+            <element signature="e#2732#2807#0" expanded="false" />
+            <element signature="e#2873#4149#0" expanded="false" />
+            <element signature="e#3021#3195#0" expanded="false" />
+            <element signature="e#3298#3500#0" expanded="false" />
+            <element signature="e#3602#3843#0" expanded="false" />
+            <element signature="e#3884#4049#0" expanded="false" />
+            <element signature="e#4060#4135#0" expanded="false" />
+            <element signature="e#4181#4335#0" expanded="false" />
+            <element signature="e#4373#4599#0" expanded="false" />
+            <element signature="e#4632#5540#0" expanded="false" />
+            <element signature="e#4773#5517#0" expanded="false" />
+            <element signature="e#5574#6463#0" expanded="false" />
+            <element signature="e#5728#6441#0" expanded="false" />
+            <element signature="e#6498#7406#0" expanded="false" />
+            <element signature="e#6647#7384#0" expanded="false" />
+            <element signature="e#7446#8101#0" expanded="false" />
+            <element signature="e#7519#8077#0" expanded="false" />
+            <element signature="e#7615#7729#0" expanded="false" />
+            <element signature="e#8423#8509#0" expanded="false" />
+            <element signature="e#8561#8646#0" expanded="false" />
+            <element signature="e#9776#10036#0" expanded="false" />
+            <element signature="e#9912#10018#0" expanded="false" />
+            <element signature="e#10119#10489#0" expanded="false" />
+            <element signature="e#10307#10465#0" expanded="false" />
+            <element signature="e#10314#10465#0" expanded="false" />
+            <element signature="e#10320#10465#0" expanded="false" />
+            <element signature="e#10562#12258#0" expanded="false" />
+            <element signature="e#10651#11291#0" expanded="false" />
+            <element signature="e#10784#10980#0" expanded="false" />
+            <element signature="e#11095#11291#0" expanded="false" />
+            <element signature="e#11333#12236#0" expanded="false" />
+            <element signature="e#11589#11718#0" expanded="false" />
+            <element signature="e#11970#12236#0" expanded="false" />
+            <element signature="e#12433#12539#0" expanded="false" />
+            <element signature="e#12647#12767#0" expanded="false" />
+            <element signature="e#13077#13269#0" expanded="false" />
+            <element signature="e#13414#13625#0" expanded="false" />
+            <element signature="e#13717#14420#0" expanded="false" />
+            <element signature="e#13909#14031#0" expanded="false" />
+            <element signature="e#14048#14090#0" expanded="false" />
+            <element signature="e#14141#14341#0" expanded="false" />
+            <element signature="e#15617#15848#0" expanded="false" />
+            <element signature="e#15882#16550#0" expanded="false" />
+            <element signature="e#15973#16025#0" expanded="false" />
+            <element signature="e#16044#16094#0" expanded="false" />
+            <element signature="e#16124#16343#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/job_queue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="89" column="20" lean-forward="false" selection-start-line="89" selection-start-column="20" selection-end-line="89" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/job_queries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_daemon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#524#3073#0" expanded="false" />
+            <element signature="e#3100#3342#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../stablize_spinach/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="444" column="0" lean-forward="false" selection-start-line="444" selection-start-column="0" selection-end-line="444" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#427#557#0" expanded="false" />
+            <element signature="e#819#1140#0" expanded="false" />
+            <element signature="e#1194#1369#0" expanded="false" />
+            <element signature="e#1404#1711#0" expanded="false" />
+            <element signature="e#1757#2821#0" expanded="false" />
+            <element signature="e#1821#2262#0" expanded="false" />
+            <element signature="e#2287#2383#0" expanded="false" />
+            <element signature="e#2494#2721#0" expanded="false" />
+            <element signature="e#2732#2807#0" expanded="false" />
+            <element signature="e#2873#4149#0" expanded="false" />
+            <element signature="e#3021#3195#0" expanded="false" />
+            <element signature="e#3298#3500#0" expanded="false" />
+            <element signature="e#3602#3843#0" expanded="false" />
+            <element signature="e#3884#4049#0" expanded="false" />
+            <element signature="e#4060#4135#0" expanded="false" />
+            <element signature="e#4181#4335#0" expanded="false" />
+            <element signature="e#4373#4599#0" expanded="false" />
+            <element signature="e#4632#5540#0" expanded="false" />
+            <element signature="e#4773#5517#0" expanded="false" />
+            <element signature="e#5574#6463#0" expanded="false" />
+            <element signature="e#5728#6441#0" expanded="false" />
+            <element signature="e#6498#7406#0" expanded="false" />
+            <element signature="e#6647#7384#0" expanded="false" />
+            <element signature="e#7446#8101#0" expanded="false" />
+            <element signature="e#7519#8077#0" expanded="false" />
+            <element signature="e#7615#7729#0" expanded="false" />
+            <element signature="e#8423#8509#0" expanded="false" />
+            <element signature="e#8561#8646#0" expanded="false" />
+            <element signature="e#9776#10036#0" expanded="false" />
+            <element signature="e#9912#10018#0" expanded="false" />
+            <element signature="e#10119#10489#0" expanded="false" />
+            <element signature="e#10307#10465#0" expanded="false" />
+            <element signature="e#10314#10465#0" expanded="false" />
+            <element signature="e#10320#10465#0" expanded="false" />
+            <element signature="e#10562#12258#0" expanded="false" />
+            <element signature="e#10651#11291#0" expanded="false" />
+            <element signature="e#10784#10980#0" expanded="false" />
+            <element signature="e#11095#11291#0" expanded="false" />
+            <element signature="e#11333#12236#0" expanded="false" />
+            <element signature="e#11589#11718#0" expanded="false" />
+            <element signature="e#11970#12236#0" expanded="false" />
+            <element signature="e#12433#12539#0" expanded="false" />
+            <element signature="e#12647#12767#0" expanded="false" />
+            <element signature="e#13077#13269#0" expanded="false" />
+            <element signature="e#13414#13625#0" expanded="false" />
+            <element signature="e#13717#14420#0" expanded="false" />
+            <element signature="e#13909#14031#0" expanded="false" />
+            <element signature="e#14048#14090#0" expanded="false" />
+            <element signature="e#14141#14341#0" expanded="false" />
+            <element signature="e#15617#15848#0" expanded="false" />
+            <element signature="e#15882#16550#0" expanded="false" />
+            <element signature="e#15973#16025#0" expanded="false" />
+            <element signature="e#16044#16094#0" expanded="false" />
+            <element signature="e#16124#16343#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/html.py" />
+    <entry file="file://$PROJECT_DIR$/rnamake_server/html_page.py" />
+    <entry file="file://$PROJECT_DIR$/../../RNAMake/rnamake/lib/RNAMake/cmake/build/plot_cuttoffs.py" />
+    <entry file="file://$PROJECT_DIR$/rnamake_server/html_page_new.py" />
+    <entry file="file://$PROJECT_DIR$/rnamake_server/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/templates/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/navbar.py" />
+    <entry file="file://$PROJECT_DIR$/../../RNAMake/rnamake/lib/RNAMake/cmake/build/sort_constraints.py" />
+    <entry file="file://$PROJECT_DIR$/../trna_bending/plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="36" column="118" lean-forward="false" selection-start-line="36" selection-start-column="94" selection-end-line="36" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../stablize_spinach/apt_first/get_unique_solutions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../RNAMake/rnamake/lib/RNAMake/cmake/build/plot.py" />
+    <entry file="file://$PROJECT_DIR$/rnamake_server/html_page.py" />
+    <entry file="file://$PROJECT_DIR$/../../RNAMake/rnamake/lib/RNAMake/cmake/build/plot_cuttoffs.py" />
+    <entry file="file://$PROJECT_DIR$/rnamake_server/unittests/html_unittest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/html.py" />
+    <entry file="file://$PROJECT_DIR$/res/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/templates/navbar.html" />
+    <entry file="file://$PROJECT_DIR$/rnamake_server/unittests/test_jinja2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/c32af6417fb183e71c662232091ce548/view_structure.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/images/render_motifs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/html_page_new.py" />
+    <entry file="file://$PROJECT_DIR$/data/c32af6417fb183e71c662232091ce548/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/email_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../DasLabBot/rw3d/bin/all_in_one.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1732">
+          <caret line="170" column="75" lean-forward="false" selection-start-line="170" selection-start-column="70" selection-end-line="170" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../atp_switch/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../stablize_spinach/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/RNAMake.Paper/FirstSubmission/Data/spinach_ttr_analysis/plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ribosome_tether/test_mg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fix_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/job_queue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding>
+            <marker date="1531951880532" expanded="true" signature="1527:1714" ph="CREATE TABLE... jobs" />
+            <marker date="1531951880532" expanded="true" signature="1850:1875" ph="SELECT COUNT... jobs" />
+            <marker date="1531951880532" expanded="true" signature="2078:2188" ph="INSERT INTO jobs... " />
+            <marker date="1531951880532" expanded="true" signature="2371:2398" ph="DELETE FROM " />
+            <marker date="1531951880532" expanded="true" signature="2569:2600" ph="SELECT * FRO... jobs" />
+            <marker date="1531951880532" expanded="true" signature="2829:2854" ph="SELECT MAX(n... jobs" />
+            <marker date="1531951880532" expanded="true" signature="3043:3083" ph="SELECT MIN(n... jobs" />
+            <marker date="1531951880532" expanded="true" signature="3205:3236" ph="SELECT * FRO... jobs" />
+            <marker date="1531951880532" expanded="true" signature="3370:3403" ph="SELECT * FRO... jobs" />
+            <marker date="1531951880532" expanded="true" signature="3644:3677" ph="SELECT * FRO... jobs" />
+            <marker date="1531951880532" expanded="true" signature="3854:3893" ph="UPDATE jobs " />
+            <marker date="1531951880532" expanded="true" signature="4018:4051" ph="SELECT * FRO... jobs" />
+            <marker date="1531951880532" expanded="true" signature="4226:4244" ph="SELECT * FRO... jobs" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/atp_stablizers_v2/plot_new.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="445" column="22" lean-forward="false" selection-start-line="445" selection-start-column="22" selection-end-line="445" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#427#557#0" expanded="false" />
+            <element signature="e#819#1140#0" expanded="false" />
+            <element signature="e#1194#1369#0" expanded="false" />
+            <element signature="e#1404#1711#0" expanded="false" />
+            <element signature="e#1757#2821#0" expanded="false" />
+            <element signature="e#1821#2262#0" expanded="false" />
+            <element signature="e#2287#2383#0" expanded="false" />
+            <element signature="e#2494#2721#0" expanded="false" />
+            <element signature="e#2732#2807#0" expanded="false" />
+            <element signature="e#2873#4149#0" expanded="false" />
+            <element signature="e#3021#3195#0" expanded="false" />
+            <element signature="e#3298#3500#0" expanded="false" />
+            <element signature="e#3602#3843#0" expanded="false" />
+            <element signature="e#3884#4049#0" expanded="false" />
+            <element signature="e#4060#4135#0" expanded="false" />
+            <element signature="e#4181#4335#0" expanded="false" />
+            <element signature="e#4373#4599#0" expanded="false" />
+            <element signature="e#4632#5540#0" expanded="false" />
+            <element signature="e#4773#5517#0" expanded="false" />
+            <element signature="e#5574#6463#0" expanded="false" />
+            <element signature="e#5728#6441#0" expanded="false" />
+            <element signature="e#6498#7406#0" expanded="false" />
+            <element signature="e#6647#7384#0" expanded="false" />
+            <element signature="e#7446#8101#0" expanded="false" />
+            <element signature="e#7519#8077#0" expanded="false" />
+            <element signature="e#7615#7729#0" expanded="false" />
+            <element signature="e#8423#8509#0" expanded="false" />
+            <element signature="e#8561#8646#0" expanded="false" />
+            <element signature="e#9776#10036#0" expanded="false" />
+            <element signature="e#9912#10018#0" expanded="false" />
+            <element signature="e#10119#10489#0" expanded="false" />
+            <element signature="e#10307#10465#0" expanded="false" />
+            <element signature="e#10314#10465#0" expanded="false" />
+            <element signature="e#10320#10465#0" expanded="false" />
+            <element signature="e#10562#12258#0" expanded="false" />
+            <element signature="e#10651#11291#0" expanded="false" />
+            <element signature="e#10784#10980#0" expanded="false" />
+            <element signature="e#11095#11291#0" expanded="false" />
+            <element signature="e#11333#12236#0" expanded="false" />
+            <element signature="e#11589#11718#0" expanded="false" />
+            <element signature="e#11970#12236#0" expanded="false" />
+            <element signature="e#12433#12539#0" expanded="false" />
+            <element signature="e#12647#12767#0" expanded="false" />
+            <element signature="e#13077#13269#0" expanded="false" />
+            <element signature="e#13414#13625#0" expanded="false" />
+            <element signature="e#13717#14420#0" expanded="false" />
+            <element signature="e#13909#14031#0" expanded="false" />
+            <element signature="e#14048#14090#0" expanded="false" />
+            <element signature="e#14141#14341#0" expanded="false" />
+            <element signature="e#15617#15848#0" expanded="false" />
+            <element signature="e#15882#16550#0" expanded="false" />
+            <element signature="e#15973#16025#0" expanded="false" />
+            <element signature="e#16044#16094#0" expanded="false" />
+            <element signature="e#16124#16343#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_daemon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#524#3073#0" expanded="false" />
+            <element signature="e#3100#3342#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/job_queries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -348,7 +348,7 @@ def get_design_infos(df, job_id):
         motif_uses = []
         spl = row.motifs_uses.split(";")
         for e in spl[:-1]:
-            if e[0] == "H":
+            if e[0] != "T":
                 continue
             motif_uses.append(MotifInfo(e, count))
             count += 1
@@ -398,19 +398,39 @@ class RNAMakeServer:
         new_dir = "data/" + job_dir
         os.mkdir(new_dir)
 
-        f = open(new_dir + "/" + pdb_name +".pdb", "w")
+        pdb_path = new_dir + "/" + pdb_name +".pdb"
+        f = open(pdb_path, "w")
         while True:
             data = pdb_file.file.read(8192)
             f.write(data)
             if not data:
                 break
+        f.close()
+
+        self._remove_hetatoms(pdb_path)
 
         if self.mode == "devel":
-            tools.render_pdb_to_png_mac(new_dir + "/" + pdb_name +".pdb")
+            tools.render_pdb_to_png_mac(new_dir + "/" + pdb_name +".pdb",
+                                        new_dir +  "/input.png")
         else:
-            tools.render_pdb_to_png(new_dir + "/" + pdb_name +".pdb")
+            tools.render_pdb_to_png(new_dir + "/" + pdb_name +".pdb",
+                                    new_dir + "/input.png")
 
         return job_dir
+
+    def _remove_hetatoms(self, pdb_path):
+        f = open(pdb_path)
+        lines = f.readlines()
+        f.close()
+
+        f = open(pdb_path, "w")
+        for l in lines:
+            startswith = l[0:6]
+            if startswith == 'HETATM':
+                continue
+            f.write(l)
+        f.close()
+
 
     # validate scaffold pdb
     def _load_structure(self, job_id, pdb):
@@ -508,8 +528,10 @@ class RNAMakeServer:
     @cherrypy.expose
     def apt_stablization(self, pdb_file, nstruct, email=""):
         job_id = self.setup_job_dir(pdb_file, "aptamer")
+        print job_id
 
         m, error = self._load_structure(job_id, "aptamer.pdb")
+        print m
         if error is not None:
             self.atp_stablization_error = "alert(\"" + error + "\");"
             raise cherrypy.HTTPRedirect('/apt_stablization_app')
@@ -527,14 +549,21 @@ class RNAMakeServer:
 
     @cherrypy.expose
     def result(self, job_id):
-        # unknown job id
+        # unknown job id folder
         if not os.path.isdir("data/" + job_id):
             app = j2_env.get_template("/res/templates/unknown_result.html")
             return app.render(
                 job_id = job_id)
 
-        # job not completed
         j = self.job_queue.get_job(job_id)
+
+        # second check maybe deleted job?
+        if j is None:
+            app = j2_env.get_template("/res/templates/unknown_result.html")
+            return app.render(
+                job_id=job_id)
+
+        # job not completed
         if j.status == job_queue.JobStatus.QUEUED:
             app = j2_env.get_template("/res/templates/result_status.html")
             return app.render(
@@ -571,13 +600,13 @@ if __name__ == "__main__":
         socket_port = 8080
     else:
         socket_host = "0.0.0.0"
-        #socket_host = "52.10.248.184"
         socket_port = 8080
 
     cherrypy.config.update( {
         "server.socket_host":socket_host,
         "server.socket_port":socket_port,
-        "tools.staticdir.root": os.path.abspath(os.path.join(os.path.dirname(__file__), ""))
+        "tools.staticdir.root": os.path.abspath(os.path.join(os.path.dirname(__file__), "")),
+        "server.thread_pool": 100
     } )
     root = RNAMakeServer(server_state, args.no_job_creation)
 

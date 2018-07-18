@@ -27,8 +27,8 @@
          algorithms to automate the assembly of RNA 3D motifs in design. Specifically, RNAMake is capable of
          generating RNA segments in 3D composed of continuous chains of RNA motifs that that twist and translate
          between any two desired helical endpoints.</p>
-        <button type="submit" class="btn btn-primary "> Instructions for Submission </button>
-        <button type="submit" class="btn btn-primary "> Submit </button>
+        <a href="#instructions"><button type="submit" class="btn btn-primary ">Instructions for Submission</button></a>
+        <a href="#submit"><button type="submit" class="btn btn-primary "> Submit </button></a>
      </div>
      <div class="col-lg-7">
        <img src="/res/images/scaffold.png" width="100%">
@@ -36,9 +36,9 @@
   </div>
 
   <br />
-  <hr/ >
+  <hr />
 
-  <div class="row">
+  <div class="row"  id="instructions">
     <div class="col-lg-5">
       <h2>What to submit?</h2>
       <p class="lead">Submission requires a PDB containing RNA that has at least 2 basepair ends. An example structure is
@@ -57,7 +57,7 @@
   <br />
   <hr/ >
 
-  <div class="row">
+  <div class="row" id="submit">
     <br />
     <div class="col-lg-6">
       {% include '/res/templates/design_form.html' %}

@@ -140,7 +140,7 @@ class ScaffoldDesignJob(threading.Thread):
 
         if self.mode == "devel":
             for pdb_file in pdb_files:
-                tools.render_pdb_to_png_mac(pdb_file)
+                tools.render_pdb_to_png_mac(pdb_file, pd)
         elif self.mode == "release":
             for pdb_file in pdb_files:
                 tools.render_pdb_to_png(pdb_file)
@@ -161,10 +161,28 @@ class APTStablizationJob(threading.Thread):
         self.success = 0
         self.j = j
 
-
     def run(self):
         os.chdir("data/"+self.j.id)
+        subprocess.call("apt_stablization -pdb aptamer.pdb -designs %s " % (self.j.args['nstruct']) ,
+                        shell=True)
 
+        pdb_files = glob.glob("design.*.pdb")
+        if len(pdb_files) == 0:
+            f = open("ERRORS", "w")
+            f.write("No solutions were found. Sorry :(. Please see FAQ for what to do")
+            f.close()
+            return
+
+        if self.mode == "devel":
+            for pdb_file in pdb_files:
+                tools.render_pdb_to_png_mac(pdb_file)
+        elif self.mode == "release":
+            for pdb_file in pdb_files:
+                tools.render_pdb_to_png(pdb_file)
+        else:
+            raise ValueError("mode: " + self.mode + " is not supported ")
+
+        self.success = 1
 
 
     def join(self):
@@ -189,15 +207,21 @@ class RNAMakeDaemon(object):
 
             time.sleep(60)
 
+    def _generate_job(self, j):
+        if   j.type == job_queue.JobType.SCAFFOLD:
+            return ScaffoldDesignJob(self.mode, j)
+        elif j.type == job_queue.JobType.APT_STABLIZATION:
+            return APTStablizationJob(self.mode, j)
+        else:
+            raise RuntimeError("unkown job type: " + j.type_str())
 
     def run_job(self, job_id):
         j = self.job_queue.get_job(job_id)
         if j is None:
             raise ValueError(job_id + " is a unknown job id")
 
-        if j.type == job_queue.JobType.SCAFFOLD:
-            self.job_runner = ScaffoldDesignJob(self.mode, j)
-            self.job_runner.start()
+        self.job_runner = self._generate_job(j)
+        self.job_runner.start()
 
         total_time = 10
         print job_id + " has started"

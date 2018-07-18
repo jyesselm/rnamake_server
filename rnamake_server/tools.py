@@ -1,7 +1,7 @@
 import subprocess
 
 
-def render_pdb_to_png_mac(path):
+def render_pdb_to_png_mac(path, name):
     subprocess.call(
         "/Applications/MacPyMOL.app/Contents/MacOS/MacPyMOL -pc " + \
         path + " -d \" rc(); orient; set ray_opaque_background, off; " +
@@ -9,11 +9,11 @@ def render_pdb_to_png_mac(path):
         shell=True)
 
     subprocess.call(
-        "convert test.png -trim " + path[:-4] + ".png",
+        "convert test.png -trim " + name,
         shell=True)
 
 
-def render_pdb_to_png(path):
+def render_pdb_to_png(path, name):
     subprocess.call(
         "pymol -pc " + \
         path + " -d \" rc(); orient; set ray_opaque_background, off; " +
@@ -21,5 +21,5 @@ def render_pdb_to_png(path):
         shell=True)
 
     subprocess.call(
-        "convert test.png -trim " + path[:-4] + ".png",
+        "convert test.png -trim " + name,
         shell=True)

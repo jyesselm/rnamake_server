@@ -5,7 +5,6 @@ from collections import namedtuple
 from time import gmtime, strftime
 
 
-#Job = namedtuple('Job', "id status type info email time num".split())
 class Job (object):
     def __init__(self, id, status, type, args, email, time, num):
         self.id = id
@@ -35,8 +34,8 @@ class Job (object):
         str_status = self.status_str()
         str_type = self.type_str()
 
-        s = "Job(id:%s, status:%s, type:%s, args:%s)" %\
-            (self.id, str_status, str_type, json.dumps(self.args))
+        s = "Job(id:%s, status:%s, type:%s, submitted:%s, args:%s)" %\
+            (self.id, str_status, str_type, self.time, json.dumps(self.args))
 
         return s
 
@@ -78,11 +77,23 @@ class JobQueue(object):
         self.connection.commit()
         self.current_pos += 1
 
+    # only use for testing!!!
+    def delete_job(self, nid):
+        try:
+            self.connection.execute("DELETE FROM jobs WHERE id=?", (nid,))
+            self.connection.commit()
+        except:
+            return None
+
     def get_job(self, nid):
         try:
             r = self.connection.execute("SELECT * FROM jobs WHERE id=:Id", {"Id":nid}).fetchone()
         except:
             return None
+
+        if r is None:
+            return None
+
         r_obj = Job(*r)
         return r_obj
 
