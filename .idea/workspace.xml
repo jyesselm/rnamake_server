@@ -6,9 +6,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/templates/design_scaffold.html" afterPath="$PROJECT_DIR$/res/templates/design_scaffold.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/templates/stablization_form.html" afterPath="$PROJECT_DIR$/res/templates/stablization_form.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rnamake_server/job_queue.py" afterPath="$PROJECT_DIR$/rnamake_server/job_queue.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rnamake_server/settings.py" afterPath="$PROJECT_DIR$/rnamake_server/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rnamake_server/tools.py" afterPath="$PROJECT_DIR$/rnamake_server/tools.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_daemon.py" afterPath="$PROJECT_DIR$/run_daemon.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_server.py" afterPath="$PROJECT_DIR$/run_server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests.py" afterPath="$PROJECT_DIR$/tests.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,14 +19,34 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="design_rna_unittests.py" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/../../RNAMake/rnamake/lib/RNAMake/unittests/apps/design_rna_unittests.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="336">
+                    <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="run_server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="445" column="22" lean-forward="false" selection-start-line="445" selection-start-column="22" selection-end-line="445" selection-end-column="22" />
+            <state relative-caret-position="360">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <element signature="e#427#557#0" expanded="false" />
@@ -55,43 +77,27 @@
                 <element signature="e#7615#7729#0" expanded="false" />
                 <element signature="e#8423#8509#0" expanded="false" />
                 <element signature="e#8561#8646#0" expanded="false" />
-                <element signature="e#9776#10036#0" expanded="false" />
-                <element signature="e#9912#10018#0" expanded="false" />
-                <element signature="e#10119#10489#0" expanded="false" />
-                <element signature="e#10307#10465#0" expanded="false" />
-                <element signature="e#10314#10465#0" expanded="false" />
-                <element signature="e#10320#10465#0" expanded="false" />
-                <element signature="e#10562#12258#0" expanded="false" />
-                <element signature="e#10651#11291#0" expanded="false" />
-                <element signature="e#10784#10980#0" expanded="false" />
-                <element signature="e#11095#11291#0" expanded="false" />
-                <element signature="e#11333#12236#0" expanded="false" />
-                <element signature="e#11589#11718#0" expanded="false" />
-                <element signature="e#11970#12236#0" expanded="false" />
-                <element signature="e#12433#12539#0" expanded="false" />
-                <element signature="e#12647#12767#0" expanded="false" />
-                <element signature="e#13077#13269#0" expanded="false" />
-                <element signature="e#13414#13625#0" expanded="false" />
-                <element signature="e#13717#14420#0" expanded="false" />
-                <element signature="e#13909#14031#0" expanded="false" />
-                <element signature="e#14048#14090#0" expanded="false" />
-                <element signature="e#14141#14341#0" expanded="false" />
-                <element signature="e#15617#15848#0" expanded="false" />
-                <element signature="e#15882#16550#0" expanded="false" />
-                <element signature="e#15973#16025#0" expanded="false" />
-                <element signature="e#16044#16094#0" expanded="false" />
-                <element signature="e#16124#16343#0" expanded="false" />
+                <element signature="e#10551#10709#0" expanded="false" />
+                <element signature="e#10558#10709#0" expanded="false" />
+                <element signature="e#10564#10709#0" expanded="false" />
+                <element signature="e#10806#12502#0" expanded="false" />
+                <element signature="e#10895#11535#0" expanded="false" />
+                <element signature="e#11028#11224#0" expanded="false" />
+                <element signature="e#11339#11535#0" expanded="false" />
+                <element signature="e#11577#12480#0" expanded="false" />
+                <element signature="e#11833#11962#0" expanded="false" />
+                <element signature="e#12214#12480#0" expanded="false" />
+                <element signature="e#13313#13505#0" expanded="false" />
+                <element signature="e#13650#13861#0" expanded="false" />
+                <element signature="e#13953#14656#0" expanded="false" />
+                <element signature="e#14145#14267#0" expanded="false" />
+                <element signature="e#14284#14326#0" expanded="false" />
+                <element signature="e#14377#14577#0" expanded="false" />
+                <element signature="e#15853#16084#0" expanded="false" />
+                <element signature="e#16209#16261#0" expanded="false" />
+                <element signature="e#16280#16330#0" expanded="false" />
+                <element signature="e#16360#16579#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tools.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rnamake_server/tools.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -99,9 +105,27 @@
       <file leaf-file-name="tests.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="428">
+              <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+                <element signature="e#2599#3315#0" expanded="false" />
+                <element signature="e#3366#3549#0" expanded="false" />
+                <element signature="e#3606#4174#0" expanded="false" />
+                <element signature="e#4222#4273#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="daemon.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rnamake_server/daemon.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="900">
+              <caret line="75" column="36" lean-forward="true" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,12 +133,11 @@
       <file leaf-file-name="run_daemon.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_daemon.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+            <state relative-caret-position="72">
+              <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#524#3073#0" expanded="false" />
-                <element signature="e#3100#3342#0" expanded="false" />
+                <element signature="e#515#3064#0" expanded="false" />
+                <element signature="e#3091#3333#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -123,8 +146,8 @@
       <file leaf-file-name="job_queries.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/job_queries.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+            <state relative-caret-position="588">
+              <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -145,6 +168,9 @@
       <find>start</find>
       <find>mode</find>
       <find>get_js_eterna_score</find>
+      <find>png</find>
+      <find>test.pn</find>
+      <find>test.png</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,15 +192,17 @@
         <option value="$PROJECT_DIR$/data/c32af6417fb183e71c662232091ce548/run.py" />
         <option value="$PROJECT_DIR$/res/images/render_motifs.py" />
         <option value="$PROJECT_DIR$/rnamake_server/email_client.py" />
-        <option value="$PROJECT_DIR$/run_daemon.py" />
         <option value="$PROJECT_DIR$/rnamake_server/tools.py" />
         <option value="$USER_HOME$/Dropbox/RNAMake.Paper/FirstSubmission/Data/spinach_ttr_analysis/plot.py" />
         <option value="$PROJECT_DIR$/../ribosome_tether/test_mg.py" />
         <option value="$PROJECT_DIR$/fix_data.py" />
         <option value="$PROJECT_DIR$/rnamake_server/job_queue.py" />
         <option value="$PROJECT_DIR$/run_server.py" />
-        <option value="$PROJECT_DIR$/tests.py" />
+        <option value="$PROJECT_DIR$/run_daemon.py" />
         <option value="$PROJECT_DIR$/job_queries.py" />
+        <option value="$PROJECT_DIR$/rnamake_server/settings.py" />
+        <option value="$PROJECT_DIR$/rnamake_server/daemon.py" />
+        <option value="$PROJECT_DIR$/tests.py" />
       </list>
     </option>
   </component>
@@ -185,8 +213,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1038" />
-    <option name="y" value="412" />
+    <option name="x" value="954" />
+    <option name="y" value="384" />
     <option name="width" value="673" />
     <option name="height" value="1020" />
   </component>
@@ -393,7 +421,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1038" y="412" width="673" height="1020" extended-state="0" />
+    <frame x="954" y="384" width="673" height="1020" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24881141" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -425,120 +453,19 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="27" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/job_queries.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ribosome_tether/test_mg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1272">
-          <caret line="525" column="33" lean-forward="false" selection-start-line="525" selection-start-column="33" selection-end-line="525" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#427#557#0" expanded="false" />
-            <element signature="e#819#1140#0" expanded="false" />
-            <element signature="e#1194#1369#0" expanded="false" />
-            <element signature="e#1404#1711#0" expanded="false" />
-            <element signature="e#1757#2821#0" expanded="false" />
-            <element signature="e#1821#2262#0" expanded="false" />
-            <element signature="e#2287#2383#0" expanded="false" />
-            <element signature="e#2494#2721#0" expanded="false" />
-            <element signature="e#2732#2807#0" expanded="false" />
-            <element signature="e#2873#4149#0" expanded="false" />
-            <element signature="e#3021#3195#0" expanded="false" />
-            <element signature="e#3298#3500#0" expanded="false" />
-            <element signature="e#3602#3843#0" expanded="false" />
-            <element signature="e#3884#4049#0" expanded="false" />
-            <element signature="e#4060#4135#0" expanded="false" />
-            <element signature="e#4181#4335#0" expanded="false" />
-            <element signature="e#4373#4599#0" expanded="false" />
-            <element signature="e#4632#5540#0" expanded="false" />
-            <element signature="e#4773#5517#0" expanded="false" />
-            <element signature="e#5574#6463#0" expanded="false" />
-            <element signature="e#5728#6441#0" expanded="false" />
-            <element signature="e#6498#7406#0" expanded="false" />
-            <element signature="e#6647#7384#0" expanded="false" />
-            <element signature="e#7446#8101#0" expanded="false" />
-            <element signature="e#7519#8077#0" expanded="false" />
-            <element signature="e#7615#7729#0" expanded="false" />
-            <element signature="e#8423#8509#0" expanded="false" />
-            <element signature="e#8561#8646#0" expanded="false" />
-            <element signature="e#9776#10036#0" expanded="false" />
-            <element signature="e#9912#10018#0" expanded="false" />
-            <element signature="e#10119#10489#0" expanded="false" />
-            <element signature="e#10307#10465#0" expanded="false" />
-            <element signature="e#10314#10465#0" expanded="false" />
-            <element signature="e#10320#10465#0" expanded="false" />
-            <element signature="e#10562#12258#0" expanded="false" />
-            <element signature="e#10651#11291#0" expanded="false" />
-            <element signature="e#10784#10980#0" expanded="false" />
-            <element signature="e#11095#11291#0" expanded="false" />
-            <element signature="e#11333#12236#0" expanded="false" />
-            <element signature="e#11589#11718#0" expanded="false" />
-            <element signature="e#11970#12236#0" expanded="false" />
-            <element signature="e#12433#12539#0" expanded="false" />
-            <element signature="e#12647#12767#0" expanded="false" />
-            <element signature="e#13077#13269#0" expanded="false" />
-            <element signature="e#13414#13625#0" expanded="false" />
-            <element signature="e#13717#14420#0" expanded="false" />
-            <element signature="e#13909#14031#0" expanded="false" />
-            <element signature="e#14048#14090#0" expanded="false" />
-            <element signature="e#14141#14341#0" expanded="false" />
-            <element signature="e#15617#15848#0" expanded="false" />
-            <element signature="e#15882#16550#0" expanded="false" />
-            <element signature="e#15973#16025#0" expanded="false" />
-            <element signature="e#16044#16094#0" expanded="false" />
-            <element signature="e#16124#16343#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rnamake_server/job_queue.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="89" column="20" lean-forward="false" selection-start-line="89" selection-start-column="20" selection-end-line="89" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/job_queries.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run_daemon.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
           <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#524#3073#0" expanded="false" />
-            <element signature="e#3100#3342#0" expanded="false" />
+            <element signature="e#0#11#0" expanded="false" />
+            <element signature="e#515#3064#0" expanded="false" />
+            <element signature="e#3091#3333#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -591,32 +518,26 @@
             <element signature="e#7615#7729#0" expanded="false" />
             <element signature="e#8423#8509#0" expanded="false" />
             <element signature="e#8561#8646#0" expanded="false" />
-            <element signature="e#9776#10036#0" expanded="false" />
-            <element signature="e#9912#10018#0" expanded="false" />
-            <element signature="e#10119#10489#0" expanded="false" />
-            <element signature="e#10307#10465#0" expanded="false" />
-            <element signature="e#10314#10465#0" expanded="false" />
-            <element signature="e#10320#10465#0" expanded="false" />
-            <element signature="e#10562#12258#0" expanded="false" />
-            <element signature="e#10651#11291#0" expanded="false" />
-            <element signature="e#10784#10980#0" expanded="false" />
-            <element signature="e#11095#11291#0" expanded="false" />
-            <element signature="e#11333#12236#0" expanded="false" />
-            <element signature="e#11589#11718#0" expanded="false" />
-            <element signature="e#11970#12236#0" expanded="false" />
-            <element signature="e#12433#12539#0" expanded="false" />
-            <element signature="e#12647#12767#0" expanded="false" />
-            <element signature="e#13077#13269#0" expanded="false" />
-            <element signature="e#13414#13625#0" expanded="false" />
-            <element signature="e#13717#14420#0" expanded="false" />
-            <element signature="e#13909#14031#0" expanded="false" />
-            <element signature="e#14048#14090#0" expanded="false" />
-            <element signature="e#14141#14341#0" expanded="false" />
-            <element signature="e#15617#15848#0" expanded="false" />
-            <element signature="e#15882#16550#0" expanded="false" />
-            <element signature="e#15973#16025#0" expanded="false" />
-            <element signature="e#16044#16094#0" expanded="false" />
-            <element signature="e#16124#16343#0" expanded="false" />
+            <element signature="e#10551#10709#0" expanded="false" />
+            <element signature="e#10558#10709#0" expanded="false" />
+            <element signature="e#10564#10709#0" expanded="false" />
+            <element signature="e#10806#12502#0" expanded="false" />
+            <element signature="e#10895#11535#0" expanded="false" />
+            <element signature="e#11028#11224#0" expanded="false" />
+            <element signature="e#11339#11535#0" expanded="false" />
+            <element signature="e#11577#12480#0" expanded="false" />
+            <element signature="e#11833#11962#0" expanded="false" />
+            <element signature="e#12214#12480#0" expanded="false" />
+            <element signature="e#13313#13505#0" expanded="false" />
+            <element signature="e#13650#13861#0" expanded="false" />
+            <element signature="e#13953#14656#0" expanded="false" />
+            <element signature="e#14145#14267#0" expanded="false" />
+            <element signature="e#14284#14326#0" expanded="false" />
+            <element signature="e#14377#14577#0" expanded="false" />
+            <element signature="e#15853#16084#0" expanded="false" />
+            <element signature="e#16209#16261#0" expanded="false" />
+            <element signature="e#16280#16330#0" expanded="false" />
+            <element signature="e#16360#16579#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -643,9 +564,9 @@
         <state relative-caret-position="900">
           <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#524#3073#0" expanded="false" />
-            <element signature="e#3100#3342#0" expanded="false" />
+            <element signature="e#0#11#0" expanded="false" />
+            <element signature="e#515#3064#0" expanded="false" />
+            <element signature="e#3091#3333#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -698,32 +619,26 @@
             <element signature="e#7615#7729#0" expanded="false" />
             <element signature="e#8423#8509#0" expanded="false" />
             <element signature="e#8561#8646#0" expanded="false" />
-            <element signature="e#9776#10036#0" expanded="false" />
-            <element signature="e#9912#10018#0" expanded="false" />
-            <element signature="e#10119#10489#0" expanded="false" />
-            <element signature="e#10307#10465#0" expanded="false" />
-            <element signature="e#10314#10465#0" expanded="false" />
-            <element signature="e#10320#10465#0" expanded="false" />
-            <element signature="e#10562#12258#0" expanded="false" />
-            <element signature="e#10651#11291#0" expanded="false" />
-            <element signature="e#10784#10980#0" expanded="false" />
-            <element signature="e#11095#11291#0" expanded="false" />
-            <element signature="e#11333#12236#0" expanded="false" />
-            <element signature="e#11589#11718#0" expanded="false" />
-            <element signature="e#11970#12236#0" expanded="false" />
-            <element signature="e#12433#12539#0" expanded="false" />
-            <element signature="e#12647#12767#0" expanded="false" />
-            <element signature="e#13077#13269#0" expanded="false" />
-            <element signature="e#13414#13625#0" expanded="false" />
-            <element signature="e#13717#14420#0" expanded="false" />
-            <element signature="e#13909#14031#0" expanded="false" />
-            <element signature="e#14048#14090#0" expanded="false" />
-            <element signature="e#14141#14341#0" expanded="false" />
-            <element signature="e#15617#15848#0" expanded="false" />
-            <element signature="e#15882#16550#0" expanded="false" />
-            <element signature="e#15973#16025#0" expanded="false" />
-            <element signature="e#16044#16094#0" expanded="false" />
-            <element signature="e#16124#16343#0" expanded="false" />
+            <element signature="e#10551#10709#0" expanded="false" />
+            <element signature="e#10558#10709#0" expanded="false" />
+            <element signature="e#10564#10709#0" expanded="false" />
+            <element signature="e#10806#12502#0" expanded="false" />
+            <element signature="e#10895#11535#0" expanded="false" />
+            <element signature="e#11028#11224#0" expanded="false" />
+            <element signature="e#11339#11535#0" expanded="false" />
+            <element signature="e#11577#12480#0" expanded="false" />
+            <element signature="e#11833#11962#0" expanded="false" />
+            <element signature="e#12214#12480#0" expanded="false" />
+            <element signature="e#13313#13505#0" expanded="false" />
+            <element signature="e#13650#13861#0" expanded="false" />
+            <element signature="e#13953#14656#0" expanded="false" />
+            <element signature="e#14145#14267#0" expanded="false" />
+            <element signature="e#14284#14326#0" expanded="false" />
+            <element signature="e#14377#14577#0" expanded="false" />
+            <element signature="e#15853#16084#0" expanded="false" />
+            <element signature="e#16209#16261#0" expanded="false" />
+            <element signature="e#16280#16330#0" expanded="false" />
+            <element signature="e#16360#16579#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -732,13 +647,6 @@
     <entry file="file://$PROJECT_DIR$/rnamake_server/html_page.py" />
     <entry file="file://$PROJECT_DIR$/../../RNAMake/rnamake/lib/RNAMake/cmake/build/plot_cuttoffs.py" />
     <entry file="file://$PROJECT_DIR$/rnamake_server/html_page_new.py" />
-    <entry file="file://$PROJECT_DIR$/rnamake_server/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rnamake_server/templates/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -850,7 +758,7 @@
         <state relative-caret-position="60">
           <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -860,16 +768,8 @@
         <state relative-caret-position="96">
           <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rnamake_server/tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -900,15 +800,65 @@
         <state relative-caret-position="139">
           <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/job_queries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../RNAMake/rnamake/lib/RNAMake/unittests/apps/design_rna_unittests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/unittests/generate_unittest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/unittests/html_page_unittest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="445" column="22" lean-forward="false" selection-start-line="445" selection-start-column="22" selection-end-line="445" selection-end-column="22" />
+        <state relative-caret-position="360">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <element signature="e#427#557#0" expanded="false" />
@@ -939,52 +889,53 @@
             <element signature="e#7615#7729#0" expanded="false" />
             <element signature="e#8423#8509#0" expanded="false" />
             <element signature="e#8561#8646#0" expanded="false" />
-            <element signature="e#9776#10036#0" expanded="false" />
-            <element signature="e#9912#10018#0" expanded="false" />
-            <element signature="e#10119#10489#0" expanded="false" />
-            <element signature="e#10307#10465#0" expanded="false" />
-            <element signature="e#10314#10465#0" expanded="false" />
-            <element signature="e#10320#10465#0" expanded="false" />
-            <element signature="e#10562#12258#0" expanded="false" />
-            <element signature="e#10651#11291#0" expanded="false" />
-            <element signature="e#10784#10980#0" expanded="false" />
-            <element signature="e#11095#11291#0" expanded="false" />
-            <element signature="e#11333#12236#0" expanded="false" />
-            <element signature="e#11589#11718#0" expanded="false" />
-            <element signature="e#11970#12236#0" expanded="false" />
-            <element signature="e#12433#12539#0" expanded="false" />
-            <element signature="e#12647#12767#0" expanded="false" />
-            <element signature="e#13077#13269#0" expanded="false" />
-            <element signature="e#13414#13625#0" expanded="false" />
-            <element signature="e#13717#14420#0" expanded="false" />
-            <element signature="e#13909#14031#0" expanded="false" />
-            <element signature="e#14048#14090#0" expanded="false" />
-            <element signature="e#14141#14341#0" expanded="false" />
-            <element signature="e#15617#15848#0" expanded="false" />
-            <element signature="e#15882#16550#0" expanded="false" />
-            <element signature="e#15973#16025#0" expanded="false" />
-            <element signature="e#16044#16094#0" expanded="false" />
-            <element signature="e#16124#16343#0" expanded="false" />
+            <element signature="e#10551#10709#0" expanded="false" />
+            <element signature="e#10558#10709#0" expanded="false" />
+            <element signature="e#10564#10709#0" expanded="false" />
+            <element signature="e#10806#12502#0" expanded="false" />
+            <element signature="e#10895#11535#0" expanded="false" />
+            <element signature="e#11028#11224#0" expanded="false" />
+            <element signature="e#11339#11535#0" expanded="false" />
+            <element signature="e#11577#12480#0" expanded="false" />
+            <element signature="e#11833#11962#0" expanded="false" />
+            <element signature="e#12214#12480#0" expanded="false" />
+            <element signature="e#13313#13505#0" expanded="false" />
+            <element signature="e#13650#13861#0" expanded="false" />
+            <element signature="e#13953#14656#0" expanded="false" />
+            <element signature="e#14145#14267#0" expanded="false" />
+            <element signature="e#14284#14326#0" expanded="false" />
+            <element signature="e#14377#14577#0" expanded="false" />
+            <element signature="e#15853#16084#0" expanded="false" />
+            <element signature="e#16209#16261#0" expanded="false" />
+            <element signature="e#16280#16330#0" expanded="false" />
+            <element signature="e#16360#16579#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/unittests/job_queue_unittest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run_daemon.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        <state relative-caret-position="72">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#524#3073#0" expanded="false" />
-            <element signature="e#3100#3342#0" expanded="false" />
+            <element signature="e#515#3064#0" expanded="false" />
+            <element signature="e#3091#3333#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/job_queries.py">
+    <entry file="file://$PROJECT_DIR$/rnamake_server/daemon.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        <state relative-caret-position="900">
+          <caret line="75" column="36" lean-forward="true" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -993,9 +944,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="428">
+          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#2599#3315#0" expanded="false" />
+            <element signature="e#3366#3549#0" expanded="false" />
+            <element signature="e#3606#4174#0" expanded="false" />
+            <element signature="e#4222#4273#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

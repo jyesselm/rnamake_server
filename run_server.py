@@ -423,12 +423,20 @@ class RNAMakeServer:
         lines = f.readlines()
         f.close()
 
+        count = 0
         f = open(pdb_path, "w")
         for l in lines:
             startswith = l[0:6]
             if startswith == 'HETATM':
                 continue
+            if startswith == 'ATOM  ':
+                count += 1
             f.write(l)
+
+        if count == 0:
+            self.design_scaffold_error = "alert(\"not a valid PDB\");"
+            raise cherrypy.HTTPRedirect('/design_scaffold_app')
+
         f.close()
 
 
@@ -488,7 +496,7 @@ class RNAMakeServer:
 
     @cherrypy.expose
     def design_scaffold(self, pdb_file, start_bp, end_bp, nstruct, email=""):
-        job_id = self.setup_job_dir(pdb_file, "scaffold")
+        job_id = self.setup_job_dir(pdb_file, "input")
 
         args = {
             'nstruct': nstruct,
@@ -496,7 +504,7 @@ class RNAMakeServer:
             'end_bp': end_bp
         }
 
-        m, error = self._load_structure(job_id, "scaffold.pdb")
+        m, error = self._load_structure(job_id, "input.pdb")
         if error is not None:
             self.design_scaffold_error = "alert(\"" + error + "\");"
             raise cherrypy.HTTPRedirect('/design_scaffold_app')
@@ -506,8 +514,6 @@ class RNAMakeServer:
             print error
             self.design_scaffold_error = "alert(\"" + error + "\");"
             raise cherrypy.HTTPRedirect('/design_scaffold_app')
-
-
 
         if not self.no_job_creation:
             self.job_queue.add_job(job_id, job_queue.JobType.SCAFFOLD, json.dumps(args))

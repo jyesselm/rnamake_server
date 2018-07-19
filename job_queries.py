@@ -1,5 +1,7 @@
 import json
 import argparse
+import glob
+import shutil
 
 from rnamake_server import job_queue
 
@@ -43,6 +45,14 @@ if __name__ == "__main__":
 
     if args.delete:
         jq.delete_job(args.delete)
+
+    if args.clean_data:
+        dirs = glob.glob("data/*")
+        for d in dirs:
+            spl = d.split("/")
+            j = jq.get_job(spl[1])
+            if j is None:
+                shutil.rmtree(d)
 
 
 

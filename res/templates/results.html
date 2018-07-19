@@ -89,7 +89,7 @@
         </thead>
         <tbody>
           {% for info in design_infos %}
-            <tr>
+            <tr id="result_row_{{info.design_num}}">
               <td><img src="{{info.img_path}}" width="250" /></td>
               <td class="small-td">{{info.design_num}}</td>
               <td class="small-td">{{info.score}}</td>
