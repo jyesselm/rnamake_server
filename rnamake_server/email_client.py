@@ -20,7 +20,7 @@ def send_email(user_email, data_dir):
     DATA = """ Dear %s,
     your RNAMake job is finished.
     See the results at
-    http://rnaredesign.stanford.edu/result/%s
+    http://rnamake.stanford.edu/result/%s
     """ % (user_email, data_dir)
 
     EMAIL_TO = [user_email]
