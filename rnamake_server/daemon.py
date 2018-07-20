@@ -37,7 +37,7 @@ class ScaffoldDesignJob(threading.Thread):
                 tools.render_pdb_to_png_mac(pdb_file, pdb_file[:-4]+".png")
         elif self.mode == "release":
             for pdb_file in pdb_files:
-                tools.render_pdb_to_png(pdb_file)
+                tools.render_pdb_to_png(pdb_file, pdb_file[:-4]+".png")
         else:
             raise ValueError("mode: " + self.mode  + " is not supported ")
 
@@ -58,7 +58,7 @@ class APTStablizationJob(threading.Thread):
 
     def run(self):
         os.chdir("data/"+self.j.id)
-        subprocess.call("apt_stablization -pdb aptamer.pdb -designs %s " % (self.j.args['nstruct']) ,
+        subprocess.call("apt_stablization -pdb input.pdb -designs %s " % (self.j.args['nstruct']) ,
                         shell=True)
 
         pdb_files = glob.glob("design.*.pdb")
@@ -71,10 +71,10 @@ class APTStablizationJob(threading.Thread):
 
         if self.mode == "devel":
             for pdb_file in pdb_files:
-                tools.render_pdb_to_png_mac(pdb_file)
+                tools.render_pdb_to_png_mac(pdb_file, pdb_file[:-4]+".png")
         elif self.mode == "release":
             for pdb_file in pdb_files:
-                tools.render_pdb_to_png(pdb_file)
+                tools.render_pdb_to_png(pdb_file, pdb_file[:-4]+".png")
         else:
             raise ValueError("mode: " + self.mode + " is not supported ")
 

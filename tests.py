@@ -47,7 +47,7 @@ def get_scaffold_args(
     return locals()
 
 def get_stablization_args(
-        pdb_file="res/unittest_res/test_pdbs/test_scaffold/min_tetraloop_receptor.pdb",
+        pdb_file="res/unittest_res/test_pdbs/test_stablization/atp_apt.pdb",
         nstruct="1",
         email=""):
     pdb_file = os.path.abspath(pdb_file)
@@ -188,7 +188,7 @@ class AptStablizationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome()
-        cls.page = "http://"+g_args.a+"/apt_stablization_app"
+        cls.page = "http://127.0.0.1:8080/apt_stablization_app"
         cls.jq = job_queue.JobQueue()
         cls.daemon = daemon.RNAMakeDaemon("devel")
 
@@ -207,7 +207,7 @@ class AptStablizationTests(unittest.TestCase):
             failed = failed_to_submit(self.page, self.driver, args)
             if not failed:
                 self.fail(
-                    "did not fail when it should of, " + a + " was nor filled in but yet ")
+                    "did not fail when it should of, " + a + " was not filled in but yet ")
 
     def test_improper_arguments(self):
         # test not a pdb file
@@ -224,14 +224,28 @@ class AptStablizationTests(unittest.TestCase):
         self.jq.delete_job(j_id)
 
     def test_run_full_job(self):
-        error = run_full_job(self.page, self.driver, self.jq, self.daemon)
+        args = get_stablization_args()
+        error = run_full_job(self.page, self.driver, self.jq, self.daemon, args)
         if error is not None:
             self.fail(error)
 
+    def test_run_all_problems(self):
+        path = settings.RES_DIR + "/unittest_res/apt_stablization_tests.txt"
+        df = pd.read_csv(path)
+
+        pdb_path = "res/unittest_res/test_pdbs/test_stablization/"
+        for i, r in df.iterrows():
+            args = get_stablization_args(pdb_file=pdb_path + r.pdb)
+
+            error = run_full_job(self.page, self.driver, self.jq, self.daemon, args)
+            if error is not None:
+                self.fail(error)
+            self.driver.get_screenshot_as_file(settings.TOP_DIR + "/tests/screenshots/"+r.pdb[:-4]+".png")
+
 
 if __name__ == "__main__":
-    g_args = parse_args()
-    sys.argv[1:] = g_args.unittest_args
+    #g_args = parse_args()
+    #sys.argv[1:] = g_args.unittest_args
     unittest.main()
 
 
