@@ -8,8 +8,7 @@ import argparse
 import threading
 import glob
 
-#import rna_design.email_client
-import job_queue, tools, settings
+import job_queue, tools, settings, email_client
 
 class ScaffoldDesignJob(threading.Thread):
     def __init__(self, mode, j):
@@ -132,7 +131,13 @@ class RNAMakeDaemon(object):
         if success:
             print job_id + " completed successfully!"
             self.job_queue.update_job_status(job_id, job_queue.JobStatus.FINISHED)
+            if j.email != "":
+                print "emailing: " + j.email
+                email_client.send_email(j.email, job_id)
+
         else:
             print job_id + " completed with an error!"
             self.job_queue.update_job_status(job_id, job_queue.JobStatus.ERROR)
+
+
 

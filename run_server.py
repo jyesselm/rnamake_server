@@ -393,7 +393,7 @@ class RNAMakeServer:
         )
 
     # helper functions
-    def setup_job_dir(self, pdb_file, pdb_name):
+    def setup_job_dir(self, pdb_file, pdb_name, page):
         job_dir = os.urandom(16).encode('hex')
         new_dir = "data/" + job_dir
         os.mkdir(new_dir)
@@ -407,7 +407,7 @@ class RNAMakeServer:
                 break
         f.close()
 
-        self._remove_hetatoms(pdb_path)
+        self._remove_hetatoms(pdb_path, page)
 
         if self.mode == "devel":
             tools.render_pdb_to_png_mac(new_dir + "/" + pdb_name +".pdb",
@@ -418,7 +418,7 @@ class RNAMakeServer:
 
         return job_dir
 
-    def _remove_hetatoms(self, pdb_path):
+    def _remove_hetatoms(self, pdb_path, page):
         f = open(pdb_path)
         lines = f.readlines()
         f.close()
@@ -435,7 +435,7 @@ class RNAMakeServer:
 
         if count == 0:
             self.design_scaffold_error = "alert(\"not a valid PDB\");"
-            raise cherrypy.HTTPRedirect('/design_scaffold_app')
+            raise cherrypy.HTTPRedirect('/'+page)
 
         f.close()
 
@@ -496,7 +496,7 @@ class RNAMakeServer:
 
     @cherrypy.expose
     def design_scaffold(self, pdb_file, start_bp, end_bp, nstruct, email=""):
-        job_id = self.setup_job_dir(pdb_file, "input")
+        job_id = self.setup_job_dir(pdb_file, "input", "design_scaffold_app")
 
         args = {
             'nstruct': nstruct,
@@ -516,7 +516,8 @@ class RNAMakeServer:
             raise cherrypy.HTTPRedirect('/design_scaffold_app')
 
         if not self.no_job_creation:
-            self.job_queue.add_job(job_id, job_queue.JobType.SCAFFOLD, json.dumps(args))
+            self.job_queue.add_job(job_id, job_queue.JobType.SCAFFOLD, json.dumps(args),
+                                   email=email)
             cherrypy.log("created new job: " + job_id)
             raise cherrypy.HTTPRedirect('/result/' + job_id)
         else:
@@ -533,11 +534,9 @@ class RNAMakeServer:
 
     @cherrypy.expose
     def apt_stablization(self, pdb_file, nstruct, email=""):
-        job_id = self.setup_job_dir(pdb_file, "aptamer")
-        print job_id
+        job_id = self.setup_job_dir(pdb_file, "input", "apt_stablization_app")
 
-        m, error = self._load_structure(job_id, "aptamer.pdb")
-        print m
+        m, error = self._load_structure(job_id, "input.pdb")
         if error is not None:
             self.atp_stablization_error = "alert(\"" + error + "\");"
             raise cherrypy.HTTPRedirect('/apt_stablization_app')
@@ -547,7 +546,8 @@ class RNAMakeServer:
         }
 
         if not self.no_job_creation:
-            self.job_queue.add_job(job_id, job_queue.JobType.APT_STABLIZATION, json.dumps(args))
+            self.job_queue.add_job(job_id, job_queue.JobType.APT_STABLIZATION, json.dumps(args),
+                                   email=email)
             cherrypy.log("created new job: " + job_id)
             raise cherrypy.HTTPRedirect('/result/' + job_id)
         else:
