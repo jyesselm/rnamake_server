@@ -9,7 +9,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rnamake_server/email_client.py" afterPath="$PROJECT_DIR$/rnamake_server/email_client.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rnamake_server/job_queue.py" afterPath="$PROJECT_DIR$/rnamake_server/job_queue.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rnamake_server/settings.py" afterPath="$PROJECT_DIR$/rnamake_server/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rnamake_server/tools.py" afterPath="$PROJECT_DIR$/rnamake_server/tools.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_daemon.py" afterPath="$PROJECT_DIR$/run_daemon.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_server.py" afterPath="$PROJECT_DIR$/run_server.py" />
     </list>
@@ -20,14 +19,39 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="3">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="tests_remote.py" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/tests_remote.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="906">
+                    <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+                    <folding>
+                      <element signature="e#0#30#0" expanded="true" />
+                      <element signature="e#3105#3452#0" expanded="false" />
+                      <element signature="e#3501#4728#0" expanded="false" />
+                      <element signature="e#6058#8114#0" expanded="false" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="run_server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="624" column="0" lean-forward="true" selection-start-line="624" selection-start-column="0" selection-end-line="624" selection-end-column="0" />
+            <state relative-caret-position="1587">
+              <caret line="634" column="0" lean-forward="true" selection-start-line="634" selection-start-column="0" selection-end-line="634" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <element signature="e#427#557#0" expanded="false" />
@@ -67,23 +91,36 @@
                 <element signature="e#11837#11966#0" expanded="false" />
                 <element signature="e#12218#12484#0" expanded="false" />
                 <element signature="e#13725#13936#0" expanded="false" />
-                <element signature="e#15959#16190#0" expanded="false" />
-                <element signature="e#16315#16367#0" expanded="false" />
-                <element signature="e#16386#16436#0" expanded="false" />
-                <element signature="e#16466#16685#0" expanded="false" />
+                <element signature="e#16343#16395#0" expanded="false" />
+                <element signature="e#16414#16464#0" expanded="false" />
+                <element signature="e#16494#16713#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tests_remote.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests_remote.py">
+      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="871">
-              <caret line="165" column="19" lean-forward="false" selection-start-line="165" selection-start-column="19" selection-end-line="165" selection-end-column="19" />
+            <state relative-caret-position="245">
+              <caret line="49" column="17" lean-forward="true" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="75" />
               <folding>
-                <element signature="e#2945#3292#0" expanded="false" />
-                <element signature="e#3341#4568#0" expanded="false" />
+                <element signature="e#0#30#0" expanded="true" />
+                <element signature="e#566#604#0" expanded="false" />
+                <element signature="e#639#740#0" expanded="false" />
+                <element signature="e#782#867#0" expanded="false" />
+                <element signature="e#1091#1147#0" expanded="false" />
+                <element signature="e#1297#1353#0" expanded="false" />
+                <element signature="e#1395#1550#0" expanded="false" />
+                <element signature="e#2659#6032#0" expanded="false" />
+                <element signature="e#2943#2960#0" expanded="false" />
+                <element signature="e#3021#3368#0" expanded="false" />
+                <element signature="e#3123#3368#0" expanded="false" />
+                <element signature="e#3417#4644#0" expanded="false" />
+                <element signature="e#4691#4915#0" expanded="false" />
+                <element signature="e#4958#5083#0" expanded="false" />
+                <element signature="e#5138#5768#0" expanded="false" />
+                <element signature="e#5819#6032#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -92,18 +129,32 @@
       <file leaf-file-name="daemon.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rnamake_server/daemon.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-95">
-              <caret line="38" column="29" lean-forward="false" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="682">
+              <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="email_client.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rnamake_server/email_client.py">
+      <file leaf-file-name="job_queries.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/job_queries.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="462">
+              <caret line="86" column="45" lean-forward="false" selection-start-line="86" selection-start-column="45" selection-end-line="86" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tools.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rnamake_server/tools.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -125,6 +176,7 @@
       <find>png</find>
       <find>test.pn</find>
       <find>test.png</find>
+      <find>do</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,19 +197,19 @@
         <option value="$PROJECT_DIR$/rnamake_server/html_page_new.py" />
         <option value="$PROJECT_DIR$/data/c32af6417fb183e71c662232091ce548/run.py" />
         <option value="$PROJECT_DIR$/res/images/render_motifs.py" />
-        <option value="$PROJECT_DIR$/rnamake_server/tools.py" />
         <option value="$USER_HOME$/Dropbox/RNAMake.Paper/FirstSubmission/Data/spinach_ttr_analysis/plot.py" />
         <option value="$PROJECT_DIR$/../ribosome_tether/test_mg.py" />
         <option value="$PROJECT_DIR$/fix_data.py" />
-        <option value="$PROJECT_DIR$/rnamake_server/job_queue.py" />
         <option value="$PROJECT_DIR$/run_daemon.py" />
-        <option value="$PROJECT_DIR$/job_queries.py" />
+        <option value="$PROJECT_DIR$/tests.py" />
+        <option value="$PROJECT_DIR$/rnamake_server/email_client.py" />
+        <option value="$PROJECT_DIR$/tests_remote.py" />
+        <option value="$PROJECT_DIR$/rnamake_server/tools.py" />
+        <option value="$PROJECT_DIR$/rnamake_server/job_queue.py" />
         <option value="$PROJECT_DIR$/rnamake_server/settings.py" />
         <option value="$PROJECT_DIR$/run_server.py" />
         <option value="$PROJECT_DIR$/rnamake_server/daemon.py" />
-        <option value="$PROJECT_DIR$/tests.py" />
-        <option value="$PROJECT_DIR$/tests_remote.py" />
-        <option value="$PROJECT_DIR$/rnamake_server/email_client.py" />
+        <option value="$PROJECT_DIR$/job_queries.py" />
       </list>
     </option>
   </component>
@@ -168,8 +220,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1056" />
-    <option name="y" value="387" />
+    <option name="x" value="634" />
+    <option name="y" value="28" />
     <option name="width" value="673" />
     <option name="height" value="1020" />
   </component>
@@ -376,7 +428,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1056" y="387" width="673" height="1020" extended-state="0" />
+    <frame x="634" y="28" width="673" height="1020" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24881141" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -408,7 +460,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="42" />
+      <option name="time" value="43" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -470,10 +522,9 @@
             <element signature="e#11837#11966#0" expanded="false" />
             <element signature="e#12218#12484#0" expanded="false" />
             <element signature="e#13725#13936#0" expanded="false" />
-            <element signature="e#15959#16190#0" expanded="false" />
-            <element signature="e#16315#16367#0" expanded="false" />
-            <element signature="e#16386#16436#0" expanded="false" />
-            <element signature="e#16466#16685#0" expanded="false" />
+            <element signature="e#16343#16395#0" expanded="false" />
+            <element signature="e#16414#16464#0" expanded="false" />
+            <element signature="e#16494#16713#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -489,9 +540,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -564,10 +613,9 @@
             <element signature="e#11837#11966#0" expanded="false" />
             <element signature="e#12218#12484#0" expanded="false" />
             <element signature="e#13725#13936#0" expanded="false" />
-            <element signature="e#15959#16190#0" expanded="false" />
-            <element signature="e#16315#16367#0" expanded="false" />
-            <element signature="e#16386#16436#0" expanded="false" />
-            <element signature="e#16466#16685#0" expanded="false" />
+            <element signature="e#16343#16395#0" expanded="false" />
+            <element signature="e#16414#16464#0" expanded="false" />
+            <element signature="e#16494#16713#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -705,14 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rnamake_server/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rnamake_server/unittests/generate_unittest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -737,38 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rnamake_server/job_queue.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="69" column="8" lean-forward="false" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
-          <folding>
-            <marker date="1531951880532" expanded="true" signature="1527:1714" ph="CREATE TABLE... jobs" />
-            <marker date="1531951880532" expanded="true" signature="1850:1875" ph="SELECT COUNT... jobs" />
-            <marker date="1531951880532" expanded="true" signature="2078:2188" ph="INSERT INTO jobs... " />
-            <marker date="1531951880532" expanded="true" signature="2371:2398" ph="DELETE FROM " />
-            <marker date="1531951880532" expanded="true" signature="2569:2600" ph="SELECT * FRO... jobs" />
-            <marker date="1531951880532" expanded="true" signature="2829:2854" ph="SELECT MAX(n... jobs" />
-            <marker date="1531951880532" expanded="true" signature="3043:3083" ph="SELECT MIN(n... jobs" />
-            <marker date="1531951880532" expanded="true" signature="3205:3236" ph="SELECT * FRO... jobs" />
-            <marker date="1531951880532" expanded="true" signature="3370:3403" ph="SELECT * FRO... jobs" />
-            <marker date="1531951880532" expanded="true" signature="3644:3677" ph="SELECT * FRO... jobs" />
-            <marker date="1531951880532" expanded="true" signature="3854:3893" ph="UPDATE jobs " />
-            <marker date="1531951880532" expanded="true" signature="4018:4051" ph="SELECT * FRO... jobs" />
-            <marker date="1531951880532" expanded="true" signature="4226:4244" ph="SELECT * FRO... jobs" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/job_queries.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run_daemon.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -789,26 +797,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rnamake_server/tools.py">
+    <entry file="file://$PROJECT_DIR$/rnamake_server/email_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        <state relative-caret-position="192">
+          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rnamake_server/daemon.py">
+    <entry file="file://$PROJECT_DIR$/rnamake_server/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="38" column="29" lean-forward="false" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="192">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="205" column="0" lean-forward="true" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
+        <state relative-caret-position="245">
+          <caret line="49" column="17" lean-forward="true" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="75" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
             <element signature="e#566#604#0" expanded="false" />
@@ -830,10 +840,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/rnamake_server/daemon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests_remote.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="906">
+          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#3105#3452#0" expanded="false" />
+            <element signature="e#3501#4728#0" expanded="false" />
+            <element signature="e#6058#8114#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/run_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="624" column="0" lean-forward="true" selection-start-line="624" selection-start-column="0" selection-end-line="624" selection-end-column="0" />
+        <state relative-caret-position="1587">
+          <caret line="634" column="0" lean-forward="true" selection-start-line="634" selection-start-column="0" selection-end-line="634" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <element signature="e#427#557#0" expanded="false" />
@@ -873,30 +906,49 @@
             <element signature="e#11837#11966#0" expanded="false" />
             <element signature="e#12218#12484#0" expanded="false" />
             <element signature="e#13725#13936#0" expanded="false" />
-            <element signature="e#15959#16190#0" expanded="false" />
-            <element signature="e#16315#16367#0" expanded="false" />
-            <element signature="e#16386#16436#0" expanded="false" />
-            <element signature="e#16466#16685#0" expanded="false" />
+            <element signature="e#16343#16395#0" expanded="false" />
+            <element signature="e#16414#16464#0" expanded="false" />
+            <element signature="e#16494#16713#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests_remote.py">
+    <entry file="file://$PROJECT_DIR$/rnamake_server/job_queue.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="871">
-          <caret line="165" column="19" lean-forward="false" selection-start-line="165" selection-start-column="19" selection-end-line="165" selection-end-column="19" />
+        <state relative-caret-position="750">
+          <caret line="159" column="72" lean-forward="true" selection-start-line="159" selection-start-column="72" selection-end-line="159" selection-end-column="83" />
           <folding>
-            <element signature="e#2945#3292#0" expanded="false" />
-            <element signature="e#3341#4568#0" expanded="false" />
+            <marker date="1532297219892" expanded="true" signature="1527:1714" ph="CREATE TABLE... jobs" />
+            <marker date="1532297219892" expanded="true" signature="2031:2141" ph="INSERT INTO jobs... " />
+            <marker date="1532297219892" expanded="true" signature="2324:2351" ph="DELETE FROM " />
+            <marker date="1532297219892" expanded="true" signature="2522:2553" ph="SELECT * FRO... jobs" />
+            <marker date="1532297219892" expanded="true" signature="2782:2807" ph="SELECT MAX(n... jobs" />
+            <marker date="1532297219892" expanded="true" signature="2996:3036" ph="SELECT MIN(n... jobs" />
+            <marker date="1532297219892" expanded="true" signature="3158:3189" ph="SELECT * FRO... jobs" />
+            <marker date="1532297219892" expanded="true" signature="3323:3356" ph="SELECT * FRO... jobs" />
+            <marker date="1532297219892" expanded="true" signature="3597:3630" ph="SELECT * FRO... jobs" />
+            <marker date="1532297219892" expanded="true" signature="3807:3846" ph="UPDATE jobs " />
+            <marker date="1532297219892" expanded="true" signature="3971:4004" ph="SELECT * FRO... jobs" />
+            <marker date="1532297219892" expanded="true" signature="4179:4197" ph="SELECT * FRO... jobs" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rnamake_server/email_client.py">
+    <entry file="file://$PROJECT_DIR$/rnamake_server/tools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="36">
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/job_queries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="86" column="45" lean-forward="false" selection-start-line="86" selection-start-column="45" selection-end-line="86" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

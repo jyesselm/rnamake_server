@@ -68,7 +68,7 @@ class JobQueue(object):
 
 
     def add_job(self, job_id, job_type, args, email=''):
-        num = self.connection.execute("SELECT COUNT(*) FROM jobs").fetchone()[0] + 1
+        num = self.get_last_num() + 1
 
         time_str = strftime("%Y-%m-%d %H:%M:%S", gmtime())
         job = [job_id, int(JobStatus.QUEUED), int(job_type), args, email, time_str, num]

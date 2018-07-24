@@ -557,6 +557,7 @@ class RNAMakeServer:
     def result(self, job_id):
         # unknown job id folder
         if not os.path.isdir("data/" + job_id):
+            print "made it"
             app = j2_env.get_template("/res/templates/unknown_result.html")
             return app.render(
                 job_id = job_id)

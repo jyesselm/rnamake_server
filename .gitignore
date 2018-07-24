@@ -1,1 +1,4 @@
 *.pyc
+jobs.db
+app.conf
+data/*

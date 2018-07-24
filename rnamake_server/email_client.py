@@ -8,7 +8,7 @@ SMTP_USERNAME = "rnamake.server@gmail.com"
 SMTP_PASSWORD = "Ceichhor1"
 
 EMAIL_FROM = "email@gmail.com"
-EMAIL_SUBJECT = "RNA Redesign Job Finished : "
+EMAIL_SUBJECT = "RNAMake Job Finished : "
 
 DATE_FORMAT = "%d/%m/%Y"
 EMAIL_SPACE = ", "

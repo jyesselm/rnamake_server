@@ -41,6 +41,13 @@ class ScaffoldDesignJob(threading.Thread):
         else:
             raise ValueError("mode: " + self.mode  + " is not supported ")
 
+        f = zipfile.ZipFile("all.zip", "w")
+        for name in os.listdir('.'):
+            if name == "all.zip":
+                continue
+            f.write(name, os.path.basename(name), zipfile.ZIP_DEFLATED)
+        f.close()
+
         os.chdir(settings.TOP_DIR)
         self.success = 1
 
@@ -77,6 +84,13 @@ class APTStablizationJob(threading.Thread):
                 tools.render_pdb_to_png(pdb_file, pdb_file[:-4]+".png")
         else:
             raise ValueError("mode: " + self.mode + " is not supported ")
+
+        f = zipfile.ZipFile("all.zip", "w")
+        for name in os.listdir('.'):
+            if name == "all.zip":
+                continue
+            f.write(name, os.path.basename(name), zipfile.ZIP_DEFLATED)
+        f.close()
 
         os.chdir(settings.TOP_DIR)
         self.success = 1
